@@ -1,0 +1,12 @@
+﻿- introduce db
+  - implement db migrations on JavaScript
+- buttons -> links
+- open editor for a note by link
+- store notes in db
+- creating a new note
+- SPA-navigation through notes
+- reordering
+- offline work
+- load blocks' templates asychronously as part of block initialization
+- live binding to notes links
+- store real notes

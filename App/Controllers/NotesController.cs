@@ -6,19 +6,19 @@ namespace App.Controllers
 {
 	public class NotesController : ApiController
 	{
-		public IEnumerable<Notes> Get()
+		public IEnumerable<Note> Get()
 		{
 			return new[]
 			{
-				new Notes
+				new Note
 				{
-					Id = 1,
-					Text = "notes 1"
+					id = 1,
+					text = "notes 1"
 				},
-				new Notes
+				new Note
 				{
-					Id = 2,
-					Text = "notes 2"
+					id = 2,
+					text = "notes 2"
 				}
 			};
 		}

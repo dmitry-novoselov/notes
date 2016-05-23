@@ -1,13 +1,10 @@
-﻿modules.define("page", ["i-bem__dom", "api"], function(provide, BEMDOM, api) {
+﻿modules.define('page', ['i-bem__dom', 'api'], function(provide, BEMDOM, api) {
 
 	provide(BEMDOM.decl(this.name,
 		{
 			onSetMod: {
 				'js': {
 					'inited': function () {
-						api.notes.get()
-							.then(this._doneGetNotes.bind(this));
-
 						this.findBlocksInside('notes-link')
 							.forEach(function(link) {
 								link.on('click', this._onOpenNotes, this);

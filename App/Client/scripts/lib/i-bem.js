@@ -5,81 +5,6 @@
  * @link https://github.com/bem-node/i-bem-doc
  */
 
-(function(global) {
-
-    global.modules = {
-
-        define: function(name, depsOrBody, body) {
-            if(body === undefined) {
-                body = depsOrBody;
-                depsOrBody = [];
-            }
-
-            this._definePool[name] = {
-                deps: depsOrBody,
-                body: body
-            };
-        },
-
-        require: function(deps, body) {
-            this._provideAllModules();
-
-            var definePool = this._definePool,
-                depsModule,
-                args = [],
-                i, len;
-
-            for(i = 0, len = deps.length; i < len; i++) {
-                depsModule = definePool[deps[i]];
-                if(!depsModule.provide) {
-                    this._provideModule(deps[i]);
-                }
-                args.push(depsModule.provide);
-            }
-
-            body.apply(global, args);
-        },
-
-        _definePool: {},
-
-        _provideAllModules: function() {
-            var definePool = this._definePool,
-                name;
-
-            for(name in definePool) if(definePool.hasOwnProperty(name)) {
-                this._provideModule(name);
-            }
-        },
-
-        _provideModule: function(name) {
-            var definePool = this._definePool,
-                module = definePool[name],
-                moduleDeps = module.deps,
-                depsModule,
-                args = [],
-                i, len;
-
-            for(i = 0, len = moduleDeps.length; i < len; i++) {
-                depsModule = definePool[moduleDeps[i]];
-                if(!depsModule.provide) {
-                    this._provideModule(moduleDeps[i]);
-                }
-                args.push(depsModule.provide);
-            }
-
-            module.body.apply({
-                name: name,
-                deps: moduleDeps,
-                global: global
-            }, [function(provide) {
-                definePool[name].provide = provide;
-            }].concat(args));
-        }
-
-    };
-
-})(this);
-
 /**
  * @module inherit
  * @version 2.2.1
@@ -3280,7 +3205,7 @@ modules.define = function(name, deps, decl) {
 
 })();
 
-modules.define('i-bem__dom_provide_global', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('i-bem__dom_provide_global', ['i-bem__dom', 'i-bem_provide_global'], function (provide, BEMDOM) {
     this.global.BEM.DOM = BEMDOM;
 });
 
@@ -3315,7 +3240,3 @@ $(function() {
 });
 
 });
-
-(function(global) {
-    delete global.modules;
-})(this);

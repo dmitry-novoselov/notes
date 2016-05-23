@@ -1,5 +1,7 @@
 ﻿<div class="page">
+	{{#each notes}}
 	<div class="page__notes-link">
-		{{#bem-block "notes-link" summary="Test1"}}{{/bem-block}}
+		{{#bem-block "notes-link" summary=text}}{{/bem-block}}
 	</div>
+	{{/each}}
 </div>

@@ -1,9 +1,12 @@
 (function($) {
 	$(document).on('blocks-loaded', function () {
 
-		modules.require(['page'], function () {
+		modules.require(['api', 'page'], function (api) {
 
-			$('.page').renderBem('page');
+			api.notes.get()
+				.then(function(response) {
+					$('.page').renderBem('page', { notes: response });
+				});
 
 		});
     
