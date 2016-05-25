@@ -1,4 +1,4 @@
-﻿modules.define("notes-link", ["i-bem__dom"], function (provide, BEMDOM) {
+﻿modules.define('notes-link', ['i-bem__dom'], function (provide, BEMDOM) {
 
 	provide(BEMDOM.decl(this.name,
 		{

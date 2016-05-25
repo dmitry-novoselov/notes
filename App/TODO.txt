@@ -10,3 +10,4 @@
 - load blocks' templates asychronously as part of block initialization
 - live binding to notes links
 - store real notes
+- soft-deleting existing notes

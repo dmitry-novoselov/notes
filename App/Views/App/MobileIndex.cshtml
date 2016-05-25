@@ -2,12 +2,11 @@
 <html>
 <head>
 	<title>Notes</title>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width"/>
 
 	<script src="/client/scripts/lib/jquery.min.js"></script>
-	<script src="/node_modules/ym/modules.js"></script>
-	<script src="/client/scripts/lib/i-bem.js"></script>
+	<script src="/client/scripts/lib/bem-core.no-autoinit.js"></script>
 	<script src="/client/scripts/lib/handlebars.min.js"></script>
 	<script src="/client/scripts/lib/rendering.js"></script>
 
@@ -22,6 +21,14 @@
 	<link href="/client/blocks/page/page.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="page"></div>
+
+<div class="page"></div>
+
+<script>
+	modules.require('i-bem__dom_init', function(init) {
+		init();
+	});
+</script>
+
 </body>
 </html>
