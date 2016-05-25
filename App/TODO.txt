@@ -11,3 +11,5 @@
 - live binding to notes links
 - store real notes
 - soft-deleting existing notes
+
+- https://github.com/bem/bem-core-dist
