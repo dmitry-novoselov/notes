@@ -1,10 +1,12 @@
-﻿modules.define("page", ["i-bem__dom", "api"], function(provide, BEMDOM, api) {
+﻿modules.define("page", ["i-bem__dom", "registry", "api"], function (provide, BEMDOM, registry, api) {
+
+	registry.push(this.name);
 
 	provide(BEMDOM.decl(this.name,
 		{
 			onSetMod: {
-				'js': {
-					'inited': function() {
+				"js": {
+					"inited": function() {
 						api.notes
 							.get()
 							.then(this._doneGetNotes.bind(this));

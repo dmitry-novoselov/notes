@@ -17,9 +17,32 @@
 <div id="page-placeholder"></div>
 
 <script>
-	modules.require('i-bem__dom_init', function(init) {
-		init();
-	});
+	(function($) {
+
+		modules.require("i-bem__dom_init", function(init) {
+			init();
+		});
+
+		modules.require(["registry"], function (registry) {
+			var loads = registry.map(function(blockName) {
+				var url = "/client/blocks/" + blockName + "/" + blockName + ".html";
+
+				return $.get(url, function(html) {
+					var script = document.createElement("script");
+					script.id = blockName + "-template";
+					script.type = "text/x-handlebem-template";
+					script.text = html;
+
+					document.body.appendChild(script);
+				});
+			});
+
+			$.when.apply(null, loads).then(function () {
+				$("#page-placeholder").renderBlock("page");
+			});
+		});
+
+	})(jQuery);
 </script>
 
 </body>

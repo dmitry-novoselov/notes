@@ -1,9 +1,5 @@
-(function($) {
-	$(document).on("blocks-loaded", function() {
-
-		modules.require(["page"], function() {
-			$("#page-placeholder").renderBlock("page");
-		});
-
+(function() {
+	modules.define("registry", function (provide) {
+		provide([]);
 	});
-})(jQuery);
+})();

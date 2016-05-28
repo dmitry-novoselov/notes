@@ -36,28 +36,6 @@ var renderBlock;
 		return renderBlock(blockName, options.hash);
 	}
 
-	// load in all blocks
-	$(function() {
-		var loads = [
-			{ name: "page", url: "/client/blocks/page/page.html" },
-			{ name: "notes-links-pane", url: "/client/blocks/notes-links-pane/notes-links-pane.html" },
-			{ name: "notes-link", url: "/client/blocks/notes-link/notes-link.html" }
-		].map(function(block) {
-			return $.get(block.url, function(html) {
-				var script = document.createElement("script");
-				script.id = block.name + "-template";
-				script.type = "text/x-handlebem-template";
-				script.text = html;
-
-				document.body.appendChild(script);
-			});
-		});
-
-		$.when.apply(null, loads).then(function() {
-			$(document).trigger("blocks-loaded");
-		});
-	});
-
 	// jQuery plugins
 	$.fn.renderBlock = function(blockName, model) {
 		var template = getTemplateFor(blockName);

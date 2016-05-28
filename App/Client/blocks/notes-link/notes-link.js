@@ -1,19 +1,21 @@
-﻿modules.define('notes-link', ['i-bem__dom'], function (provide, BEMDOM) {
+﻿modules.define("notes-link", ["i-bem__dom", "registry"], function (provide, BEMDOM, registry) {
+
+	registry.push(this.name);
 
 	provide(BEMDOM.decl(this.name,
 		{
 			onSetMod: {
-				'js': {
-					'inited': function () {
-						this.bindTo('click', this._onClicked);
+				"js": {
+					"inited": function() {
+						this.bindTo("click", this._onClicked);
 					}
 				}
 			},
 
-			_onClicked: function (e) {
+			_onClicked: function(e) {
 				e.preventDefault();
 
-				this.emit('click');
+				this.emit("click");
 			}
 		}
 	));

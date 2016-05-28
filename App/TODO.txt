@@ -4,7 +4,7 @@
 - clean up the js
 	+ bundle css
 	+ bundle js
-	- load templates automatically
+	+ load templates automatically
 	- templates are a module (program.js)
 	- share rendering utils as a module
 	- fix the links view
