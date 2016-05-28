@@ -1,3 +1,5 @@
+var renderBlock;
+
 (function(Handlebars, $) {
 
 	var templatesCache = {};
@@ -15,25 +17,30 @@
 		return template;
 	}
 
-	function renderBemBlock(blockName, options) {
+	renderBlock = function (blockName, model) {
 		var template = getTemplateFor(blockName);
 
-		var html = template(options.hash);
+		var html = template(model);
 
-		if (options.hash.mix) {
+		if (model.mix) {
 			var jNode = $(html);
-			jNode.addClass(options.hash.mix);
+			jNode.addClass(model.mix);
 
 			html = jNode.get(0).outerHTML;
 		}
 
 		return html;
+	};
+
+	function renderBemBlock(blockName, options) {
+		return renderBlock(blockName, options.hash);
 	}
 
 	// load in all blocks
 	$(function() {
 		var loads = [
 			{ name: "page", url: "/client/blocks/page/page.html" },
+			{ name: "notes-links-pane", url: "/client/blocks/notes-links-pane/notes-links-pane.html" },
 			{ name: "notes-link", url: "/client/blocks/notes-link/notes-link.html" }
 		].map(function(block) {
 			return $.get(block.url, function(html) {
@@ -51,15 +58,14 @@
 		});
 	});
 
-	// jQuery plugin
-	$.fn.renderBem = function(blockName, model) {
+	// jQuery plugins
+	$.fn.renderBlock = function(blockName, model) {
 		var template = getTemplateFor(blockName);
 
 		var html = template(model);
 		var jNode = $(html);
 
-		$(this)
-			.replaceWith(jNode);
+		this.replaceWith(jNode);
 
 		return jNode.bem(blockName);
 	};

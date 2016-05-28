@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\blocks\notes-links-pane\notes-links-pane.html" />
     <Content Include="Client\blocks\notes-link\notes-link.css" />
     <Content Include="Client\blocks\notes-link\notes-link.html" />
     <Content Include="Client\blocks\notes-link\notes-link.js" />
@@ -128,7 +129,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +143,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8f76262e-0139-41e3-8ead-cf528035aa42}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Client\blocks\page\page.js" />

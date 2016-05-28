@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using App.Models;
+using Core;
+using Core.Models;
 
 namespace App.Controllers
 {
@@ -8,19 +9,7 @@ namespace App.Controllers
 	{
 		public IEnumerable<Note> Get()
 		{
-			return new[]
-			{
-				new Note
-				{
-					id = 1,
-					text = "notes 1"
-				},
-				new Note
-				{
-					id = 2,
-					text = "notes 2"
-				}
-			};
+			return Db.ReadNotes();
 		}
 
 		// GET: api/Default/5

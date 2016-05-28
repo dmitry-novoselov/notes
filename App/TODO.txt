@@ -1,5 +1,8 @@
-﻿- introduce db
+﻿+ introduce db
   - implement db migrations on JavaScript
++ use first line only for a link's content
+- clean up the js
+
 - buttons -> links
 - open editor for a note by link
 - store notes in db

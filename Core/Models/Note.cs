@@ -1,4 +1,4 @@
-﻿namespace App.Models
+﻿namespace Core.Models
 {
 	public class Note
 	{
