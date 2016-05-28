@@ -1,6 +1,6 @@
-﻿modules.define("page", ["i-bem__dom", "registry", "api"], function (provide, BEMDOM, registry, api) {
+﻿modules.define("page", ["i-bem__dom", "blocks", "api"], function (provide, BEMDOM, blocks, api) {
 
-	registry.push(this.name);
+	blocks.add(this.name);
 
 	provide(BEMDOM.decl(this.name,
 		{
@@ -33,7 +33,7 @@
 
 				BEMDOM.replace(
 					this.elem("links"),
-					renderBlock("notes-links-pane", { notes: linksSummaries, mix: "page__links" })
+					blocks.renderBlock("notes-links-pane", { notes: linksSummaries, mix: "page__links" })
 				);
 			}
 		}, {
