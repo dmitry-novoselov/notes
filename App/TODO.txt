@@ -1,5 +1,4 @@
 ﻿+ introduce db
-  - implement db migrations on JavaScript
 + use first line only for a link's content
 - clean up the js
 	+ bundle css
@@ -8,7 +7,6 @@
 	+ templates are a module (program.js)
 	+ share rendering utils as a module
 	- fix the links view
-	- implement $.fn.renderBlock with BEMDOM.replace
 
 - buttons -> links
 - open editor for a note by link
@@ -21,5 +19,6 @@
 - live binding to notes links
 - store real notes
 - soft-deleting existing notes
+- implement db migrations on JavaScript
 
 - https://github.com/bem/bem-core-dist

@@ -17,7 +17,7 @@ modules.define("program-assembled", ["blocks"], function (provide, blocks) {
 		return html;
 	}
 
-	var loads = blocks.map(function(blockName) {
+	var loads = blocks.names.map(function(blockName) {
 		var url = "/client/blocks/" + blockName + "/" + blockName + ".html";
 
 		return $.get(url, function(html) {

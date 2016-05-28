@@ -1,7 +1,13 @@
-(function () {
+(function() {
 
-	modules.define("blocks", function (provide) {
-		provide([]);
+	modules.define("blocks", function(provide) {
+		provide({
+			names: [],
+
+			push: function(name) {
+				this.names.push(name);
+			}
+		});
 	});
 
 })();
