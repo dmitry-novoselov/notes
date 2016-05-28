@@ -2,6 +2,12 @@
   - implement db migrations on JavaScript
 + use first line only for a link's content
 - clean up the js
+	+ bundle css
+	+ bundle js
+	- load templates automatically
+	- templates are a module (program.js)
+	- share rendering utils as a module
+	- fix the links view
 
 - buttons -> links
 - open editor for a note by link
