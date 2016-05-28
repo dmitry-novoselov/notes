@@ -5,9 +5,10 @@
 	+ bundle css
 	+ bundle js
 	+ load templates automatically
-	- templates are a module (program.js)
-	- share rendering utils as a module
+	+ templates are a module (program.js)
+	+ share rendering utils as a module
 	- fix the links view
+	- implement $.fn.renderBlock with BEMDOM.replace
 
 - buttons -> links
 - open editor for a note by link

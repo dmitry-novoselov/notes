@@ -1,6 +1,6 @@
 ﻿modules.define("page", ["i-bem__dom", "blocks", "api"], function (provide, BEMDOM, blocks, api) {
 
-	blocks.add(this.name);
+	blocks.push(this.name);
 
 	provide(BEMDOM.decl(this.name,
 		{
