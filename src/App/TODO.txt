@@ -1,4 +1,8 @@
-﻿- fix the links view
+﻿- include css in LocalBuild
+- include blocks' templates into the page
+- separate the backend and client projects
+
+- fix the links view
 - buttons -> links
 - open editor for a note by link
 - store notes in db

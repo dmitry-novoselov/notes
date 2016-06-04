@@ -1,0 +1,36 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "An online tool to jot down notes.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitry-novoselov/notes.git"
+  },
+  "keywords": [
+    "online",
+    "notes"
+  ],
+  "author": "Dmitry Novoselov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitry-novoselov/notes/issues"
+  },
+  "homepage": "https://github.com/dmitry-novoselov/notes#readme"
+}

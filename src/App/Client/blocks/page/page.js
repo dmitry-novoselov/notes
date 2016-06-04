@@ -7,9 +7,13 @@
 			onSetMod: {
 				"js": {
 					"inited": function() {
-						api.notes
-							.get()
-							.then(this._doneGetNotes.bind(this));
+						// api.notes
+						// 	.get()
+						// 	.then(this._doneGetNotes.bind(this));
+						this._doneGetNotes([
+							{id: 1, text: "text 1"},
+							{id: 2, text: "text 2 dfgdsfg dsfg sg"},
+						]);
 					}
 				}
 			},
