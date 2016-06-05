@@ -1,17 +1,15 @@
-﻿- fix the links view
-- buttons -> links
+﻿- buttons -> links
 - open editor for a note by link
 - store notes in db
 - creating a new note
 - SPA-navigation through notes
 - reordering
 - offline work
-- load blocks' templates asychronously as part of block initialization
+- load blocks' templates asynchronously as part of block initialization
 - live binding to notes links
 - store real notes
 - soft-deleting existing notes
 - implement db migrations on JavaScript
-- use JSON instead of scripts for templates
 ? eliminate gulp
 
 - https://github.com/bem/bem-core-dist

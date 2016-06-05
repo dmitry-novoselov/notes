@@ -17,7 +17,6 @@ var browserSync = require('browser-sync').create();
 // paths
 
 var pathIndexCshtml = "./src/App/Views/App/MobileIndex.cshtml";
-var pathTemplatesCshtml = "./src/App/Views/App/Templates.cshtml";
 var pathClientBase = "./src/App/Client";
 
 var pathBlocksHtml =  pathClientBase + "/blocks/**/*.html";
@@ -26,7 +25,7 @@ var pathsCss = [
     pathClientBase + "/blocks/**/*.css"
 ];
 
-var pathLibScripts = pathClientBase + "/scripts/lib";
+var pathLibScripts = pathClientBase + "/js/lib";
 var pathScripts = [
     pathClientBase + "/js/init.js",
     pathClientBase + "/js/api.js",
@@ -39,17 +38,17 @@ gulp.task("default", function() {
     run("concat-templates");
     watch(pathBlocksHtml, function() { run("concat-templates"); });
     
-    buildCss(pathClientBase + "/css");
-    watchCss(pathClientBase + "/css");
+    buildCss(pathClientBase);
+    watchCss(pathClientBase);
     
-    buildStaticJs(pathClientBase + "/scripts");
-    buildJs(pathClientBase + "/scripts");
-    watchJs(pathClientBase + "/scripts");
+    buildStaticJs(pathClientBase);
+    buildJs(pathClientBase);
+    watchJs(pathClientBase);
 });
 
 // clientOnly build
 
-var pathDest = "./ClientOnly.Build";
+var pathDest = "./Client.Build";
 
 gulp.task("build-index.html", ["concat-templates"], function() {
     return gulp.src(pathIndexCshtml)
@@ -60,16 +59,16 @@ gulp.task("build-index.html", ["concat-templates"], function() {
         .pipe(gulp.dest(pathDest));
 });
 
-gulp.task("clientOnly", ["build-index.html"], function() {
+gulp.task("client", ["build-index.html"], function() {
     gulp.watch(pathIndexCshtml, ["build-index.html"]);
     watch(pathBlocksHtml, function() { run("build-index.html"); });
 
-    buildCss(pathDest + "/css");
-    watchCss(pathDest + "/css");
+    buildCss(pathDest);
+    watchCss(pathDest);
 
-    buildStaticJs(pathDest + "/js");
-    buildJs(pathDest + "/js");
-    watchJs(pathDest + "/js");
+    buildStaticJs(pathDest);
+    buildJs(pathDest);
+    watchJs(pathDest);
 
     browserSync.init({
         server: {
@@ -89,42 +88,42 @@ gulp.task("concat-templates", function() {
         .pipe(gulp.dest("./src/App/Views/App"));
 });
 
-function buildCss(dest) {
+function buildCss(destBase) {
     gulp.src(pathsCss)
         .pipe(sourcemaps.init())
         .pipe(concat("app.css"))
         .pipe(cleanCss())
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(dest))
+        .pipe(gulp.dest(destBase + "/css"))
 }
 
-function watchCss(dest) {
+function watchCss(destBase) {
     pathsCss.forEach(function(path) {
-        watch(path, buildCss.bind(null, dest));
+        watch(path, buildCss.bind(null, destBase));
     });
 }
 
-function buildStaticJs(dest) {
+function buildStaticJs(destBase) {
     gulp.src([
         pathLibScripts + "/jquery.min.js",
         pathLibScripts + "/bem-core.no-autoinit.js",
         pathLibScripts + "/handlebars.min.js"
     ])
         .pipe(concat("lib.js"))
-        .pipe(gulp.dest(dest));
+        .pipe(gulp.dest(destBase + "/js"));
 }
 
-function buildJs(dest) {
+function buildJs(destBase) {
     gulp.src(pathScripts)
         .pipe(sourcemaps.init())
         .pipe(concat("app.js"))
         .pipe(uglify())
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(dest))
+        .pipe(gulp.dest(destBase + "/js"))
 }
 
-function watchJs(dest) {
+function watchJs(destBase) {
     pathScripts.forEach(function(path) {
-        watch(path, buildJs.bind(null, dest));
+        watch(path, buildJs.bind(null, destBase));
     });
 }

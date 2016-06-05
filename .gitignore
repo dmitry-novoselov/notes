@@ -12,7 +12,7 @@
 [Pp]ackages
 node_modules
 
-ClientOnly.Build
+Client.Build
 app.css
 app.css.map
 app.js
