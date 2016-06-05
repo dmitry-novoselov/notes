@@ -130,8 +130,7 @@
     <Content Include="Client\scripts\lib\bem-core.no-autoinit.js" />
     <Content Include="Client\scripts\lib\handlebars.min.js" />
     <Content Include="Client\scripts\lib\jquery.min.js" />
-    <Content Include="Client\scripts\program\assemble.js" />
-    <Content Include="Client\scripts\program\init.js" />
+    <Content Include="Client\scripts\init.js" />
     <Content Include="Global.asax" />
     <Content Include="TODO.txt" />
     <Content Include="Web.config" />
@@ -151,6 +150,7 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\App\MobileIndex.cshtml" />
+    <Content Include="Views\App\Templates.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,7 +16,7 @@
 
 <div id="page-placeholder"></div>
 
-<!--=include client/blocks/templates.html -->
+@{ Html.RenderPartial("Templates"); }
 
 <script>
 modules.require(["i-bem__dom_init"], function(init) {

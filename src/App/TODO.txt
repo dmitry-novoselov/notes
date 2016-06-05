@@ -1,5 +1,8 @@
-﻿- include blocks' templates into the page
-- separate the backend and client projects
+﻿- build for VS work
+	+ include blocks' templates into the page
+	- compile css
+	- remove ASP.NET bundling
+- use JSON instead of scripts for templates
 
 - fix the links view
 - buttons -> links

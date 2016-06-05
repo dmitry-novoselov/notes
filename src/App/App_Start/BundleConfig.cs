@@ -17,9 +17,8 @@ namespace App
 
 			bundles.Add(new ScriptBundle("~/js/app")
 				.Include("~/client/scripts/api.js")
-				.Include("~/client/scripts/program/init.js")
-				.IncludeDirectory("~/client/blocks", "*.js", true)
-				.Include("~/client/scripts/program/assemble.js"));
+				.Include("~/client/scripts/init.js")
+				.IncludeDirectory("~/client/blocks", "*.js", true));
 		}
 	}
 }
