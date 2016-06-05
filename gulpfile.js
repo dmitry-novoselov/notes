@@ -35,13 +35,6 @@ var pathScripts = [
 
 // VS build
 
-gulp.task("concat-templates", function() {
-    return gulp.src(pathBlocksHtml)
-        .pipe(wrap({src: pathClientBase + "/blocks/template-wrap.txt"}))
-        .pipe(concat("Templates.cshtml"))
-        .pipe(gulp.dest("./src/App/Views/App"));
-});
-
 gulp.task("default", function() {
     run("concat-templates");
     watch(pathBlocksHtml, function() { run("concat-templates"); });
@@ -85,6 +78,15 @@ gulp.task("clientOnly", ["build-index.html"], function() {
     });
     
     watch(pathDest + "/**/*", browserSync.reload);
+});
+
+// shared utils
+
+gulp.task("concat-templates", function() {
+    return gulp.src(pathBlocksHtml)
+        .pipe(wrap({src: pathClientBase + "/blocks/template-wrap.txt"}))
+        .pipe(concat("Templates.cshtml"))
+        .pipe(gulp.dest("./src/App/Views/App"));
 });
 
 function buildCss(dest) {
