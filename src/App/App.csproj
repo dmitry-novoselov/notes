@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\blocks\notes-links-pane\notes-links-pane.css" />
     <Content Include="Client\blocks\notes-links-pane\notes-links-pane.js" />
     <Content Include="Client\blocks\notes-links-pane\notes-links-pane.html" />
     <Content Include="Client\blocks\notes-link\notes-link.css" />

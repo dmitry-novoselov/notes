@@ -1,5 +1,4 @@
-﻿- buttons -> links
-- open editor for a note by link
+﻿- open editor for a note by link
 - store notes in db
 - creating a new note
 - SPA-navigation through notes
