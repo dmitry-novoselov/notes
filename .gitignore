@@ -15,3 +15,6 @@ node_modules
 ClientOnly.Build
 app.css
 app.css.map
+app.js
+app.js.map
+lib.js
