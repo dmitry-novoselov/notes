@@ -1,5 +1,4 @@
-﻿- include css in LocalBuild
-- include blocks' templates into the page
+﻿- include blocks' templates into the page
 - separate the backend and client projects
 
 - fix the links view

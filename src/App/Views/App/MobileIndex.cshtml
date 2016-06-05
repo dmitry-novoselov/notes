@@ -16,8 +16,10 @@
 
 <div id="page-placeholder"></div>
 
+<!--=include client/blocks/templates.html -->
+
 <script>
-modules.require(["i-bem__dom_init", "program-assembled"], function(init) {
+modules.require(["i-bem__dom_init"], function(init) {
 	init();
 
 	$("#page-placeholder").renderBlock("page");

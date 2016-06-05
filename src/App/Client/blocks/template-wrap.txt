@@ -1,0 +1,4 @@
+﻿
+<script id="<%= file.relative.replace(/[^\/\\]+(\\|\/)/, "").replace(/\.html$/, "") %>" type="text/x-handlebem-template">
+<%= contents %>
+</script>
