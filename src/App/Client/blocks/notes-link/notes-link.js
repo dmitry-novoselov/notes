@@ -4,18 +4,17 @@
 
 	provide(BEMDOM.decl(this.name,
 		{
-			onSetMod: {
-				"js": {
-					"inited": function() {
-						this.bindTo("click", this._onClicked);
-					}
-				}
-			},
-
 			_onClicked: function(e) {
 				e.preventDefault();
 
 				this.emit("click");
+			}
+		},
+		{
+			live: function () {
+				this.liveBindTo("click touchstart", function(e) {
+					this._onClicked(e);
+				});
 			}
 		}
 	));

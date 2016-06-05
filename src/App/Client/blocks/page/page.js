@@ -35,12 +35,11 @@
 					};
 				});
 
-				BEMDOM.replace(
-					this.elem("links"),
-					blocks.renderBlock("notes-links-pane", { notes: linksSummaries, mix: "page__links" })
-				);
+				this.findBlockOn(this.elem("links"), "notes-links-pane")
+					.render(linksSummaries);
 			}
-		}, {
+		},
+		{
 			live: function() {
 				return false;
 			}

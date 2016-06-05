@@ -30,23 +30,23 @@
 		return html;
 	}
 
-	// custom Handlebars block
-	Handlebars.registerHelper("bem-block", function (blockName, options) {
-		return blocks.renderBlock(blockName, options.hash);
-	});
+	modules.define("blocks", ["i-bem__dom"], function(provide, BEMDOM) {
+        // custom Handlebars block
+        Handlebars.registerHelper("bem-block", function (blockName, options) {
+            return blocks.renderBlock(blockName, options.hash);
+        });
 
-	// jQuery plugin
-	$.fn.renderBlock = function (blockName, model) {
-		var html = blocks.renderBlock(blockName, model);
-		var jNode = $(html);
+        // jQuery plugin
+        $.fn.renderBlock = function (blockName, model) {
+            var html = blocks.renderBlock(blockName, model);
+            var jNode = $(html);
 
-		this.replaceWith(jNode);
+            this.replaceWith(jNode);
 
-		return jNode.bem(blockName);
-	};
+            return jNode.bem(blockName);
+        };
 
-	modules.define("blocks", function(provide) {
-		provide(blocks);
+        provide(blocks);
 	});
 
 })();
