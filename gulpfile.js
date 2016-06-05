@@ -21,7 +21,7 @@ var pathTemplatesCshtml = "./src/App/Views/App/Templates.cshtml";
 var pathClientBase = "./src/App/Client";
 
 var pathBlocksHtml =  pathClientBase + "/blocks/**/*.html";
-var pathBlocksCss =  pathClientBase + "/blocks/**/*.css";
+var pathsCss = [pathClientBase + "/css/body.css", pathClientBase + "/blocks/**/*.css"];
 
 var pathLibScripts = pathClientBase + "/scripts/lib";
 
@@ -37,6 +37,9 @@ gulp.task("concat-templates", function() {
 gulp.task("default", function() {
     run("concat-templates");
     watch(pathBlocksHtml, function() { run("concat-templates"); });
+    
+    buildCss(pathClientBase + "/css");
+    watchCss(pathClientBase + "/css");
 });
 
 // clientOnly build
@@ -49,7 +52,7 @@ gulp.task("build-index.html", ["concat-templates"], function() {
         .pipe(replace(/@Styles.*/g, "<link rel='stylesheet' type='text/css' href='/css/app.css'>"))
         .pipe(replace('@Scripts.Render("~/js/lib")', "<script src='/js/lib.js'></script>"))
         .pipe(replace('@Scripts.Render("~/js/app")', "<script src='/js/app.js'></script>"))
-        .pipe(replace('@{ Html.RenderPartial("Templates"); }', "<!--=include src/App/Views/App/Templates.cshtml -->"))
+        .pipe(replace('@{ Html.RenderPartial("Templates"); }', "<!--=include ./../src/App/Views/App/Templates.cshtml -->"))
         .pipe(include({includePaths: pathDest}))
         .pipe(rename("index.html"))
         .pipe(gulp.dest(pathDest));
@@ -59,8 +62,8 @@ gulp.task("clientOnly", ["build-index.html"], function() {
     gulp.watch(pathIndexCshtml, ["build-index.html"]);
     watch(pathBlocksHtml, function() { run("build-index.html"); });
 
-    buildCss();
-    watch(pathClientBase + "/blocks/**/*.css", buildCss);
+    buildCss(pathDest + "/css");
+    watchCss(pathDest + "/css");
 
     gulp.src([
         pathLibScripts + "/jquery.min.js",
@@ -83,13 +86,19 @@ gulp.task("clientOnly", ["build-index.html"], function() {
     watch(pathDest + "/**/*", browserSync.reload);
 });
 
-function buildCss() {
-    gulp.src(pathBlocksCss)
+function buildCss(dest) {
+    gulp.src(pathsCss)
         .pipe(sourcemaps.init())
         .pipe(concat("app.css"))
         .pipe(cleanCss())
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(pathDest + "/css"))
+        .pipe(gulp.dest(dest))
+}
+
+function watchCss(dest) {
+    pathsCss.forEach(function(path) {
+        watch(path, buildCss.bind(null, dest));
+    });
 }
 
 function buildJs() {

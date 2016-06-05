@@ -125,7 +125,7 @@
     <Content Include="Client\blocks\page\page.css" />
     <Content Include="Client\blocks\page\page.html" />
     <Content Include="Client\blocks\template-wrap.txt" />
-    <Content Include="Client\css\app.css" />
+    <Content Include="Client\css\body.css" />
     <Content Include="Client\scripts\api.js" />
     <Content Include="Client\scripts\lib\bem-core.no-autoinit.js" />
     <Content Include="Client\scripts\lib\handlebars.min.js" />
