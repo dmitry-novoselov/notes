@@ -18,7 +18,7 @@ modules.define("program-assembled", ["blocks"], function (provide, blocks) {
 	}
 
 	var loads = blocks.names.map(function(blockName) {
-		var url = "/blocks/" + blockName + "/" + blockName + ".html";
+		var url = "/client/blocks/" + blockName + "/" + blockName + ".html";
 
 		return $.get(url, function(html) {
 			templates[blockName] = Handlebars.compile(html);

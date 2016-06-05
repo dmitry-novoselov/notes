@@ -6,6 +6,7 @@ var watch = require('gulp-watch');
 var concat = require('gulp-concat');
 
 var uglify = require('gulp-uglify');
+var cleanCss = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 
 var browserSync = require('browser-sync').create();
@@ -16,7 +17,7 @@ gulp.task("default", function() {
 
 // local build
 
-var pathDest = "./LocalBuild";
+var pathDest = "./ClientOnly.Build";
 var pathIndexCshtml = "./src/App/Views/App/MobileIndex.cshtml";
 var pathClientBase = "./src/App/Client/";
 
@@ -25,11 +26,11 @@ var pathBlocksCss =  pathClientBase + "/blocks/**/*.css";
 
 var pathLibScripts = pathClientBase + "/scripts/lib";
 
-gulp.task("local", function() {
+gulp.task("clientOnly", function() {
     gulp.src(pathIndexCshtml)
         .pipe(watch(pathIndexCshtml))
         .pipe(replace(/@using .*/g, ""))
-        .pipe(replace(/@Styles.*/g, ""))
+        .pipe(replace(/@Styles.*/g, "<link rel='stylesheet' type='text/css' href='/css/app.css'>"))
         .pipe(replace(/@Scripts\.Render\("~\/js\/lib"\)/, "<script src='/js/lib.js'></script>"))
         .pipe(replace(/@Scripts\.Render\("~\/js\/app"\)/, "<script src='/js/app.js'></script>"))
         .pipe(rename("index.html"))
@@ -37,11 +38,10 @@ gulp.task("local", function() {
 
     gulp.src(pathBlocksHtml)
         .pipe(watch(pathBlocksHtml))
-        .pipe(gulp.dest(pathDest + "/blocks"));
+        .pipe(gulp.dest(pathDest + "/client/blocks"));
 
-    gulp.src(pathBlocksCss)
-        .pipe(watch(pathBlocksCss))
-        .pipe(gulp.dest(pathDest + "/blocks"));
+    buildCss();
+    watch(pathClientBase + "/blocks/**/*.js", buildCss);
 
     gulp.src([
         pathLibScripts + "/jquery.min.js",
@@ -51,10 +51,9 @@ gulp.task("local", function() {
         .pipe(concat("lib.js"))
         .pipe(gulp.dest(pathDest + "/js"));
 
+    buildJs();
     watch(pathClientBase + "/blocks/**/*.js", buildJs);
     watch(pathClientBase + "/scripts/**/*.js", buildJs);
-
-    buildJs();
 
     browserSync.init({
         server: {
@@ -62,6 +61,15 @@ gulp.task("local", function() {
         }
     });
 });
+
+function buildCss() {
+    gulp.src(pathBlocksCss)
+        .pipe(sourcemaps.init())
+        .pipe(concat("app.css"))
+        .pipe(cleanCss())
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(pathDest + "/css"))
+}
 
 function buildJs() {
     gulp.src([
