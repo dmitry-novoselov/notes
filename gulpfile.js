@@ -60,7 +60,6 @@ var pathDest = "./ClientOnly.Build";
 
 gulp.task("build-index.html", ["concat-templates"], function() {
     return gulp.src(pathIndexCshtml)
-        .pipe(replace(/@using .*/g, ""))
         .pipe(replace('/client/css/', '/css/'))
         .pipe(replace('/client/scripts/', '/js/'))
         .pipe(replace('@{ Html.RenderPartial("Templates"); }', "<!--=include ./../src/App/Views/App/Templates.cshtml -->"))

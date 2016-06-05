@@ -1,7 +1,7 @@
 ﻿- build for VS work
 	+ include blocks' templates into the page
 	+ compile css
-	- remove ASP.NET bundling
+	+ remove ASP.NET bundling
 - use JSON instead of scripts for templates
 
 - fix the links view
