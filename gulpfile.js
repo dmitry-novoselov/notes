@@ -28,8 +28,8 @@ var pathsCss = [
 
 var pathLibScripts = pathClientBase + "/scripts/lib";
 var pathScripts = [
-    pathClientBase + "/scripts/init.js",
-    pathClientBase + "/scripts/api.js",
+    pathClientBase + "/js/init.js",
+    pathClientBase + "/js/api.js",
     pathClientBase + "/blocks/**/*.js"
 ];
 
@@ -60,8 +60,7 @@ var pathDest = "./ClientOnly.Build";
 
 gulp.task("build-index.html", ["concat-templates"], function() {
     return gulp.src(pathIndexCshtml)
-        .pipe(replace('/client/css/', '/css/'))
-        .pipe(replace('/client/scripts/', '/js/'))
+        .pipe(replace("/client/", "/"))
         .pipe(replace('@{ Html.RenderPartial("Templates"); }', "<!--=include ./../src/App/Views/App/Templates.cshtml -->"))
         .pipe(include({includePaths: pathDest}))
         .pipe(rename("index.html"))

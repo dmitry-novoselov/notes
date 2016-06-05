@@ -117,11 +117,11 @@
     <Content Include="Client\blocks\page\page.html" />
     <Content Include="Client\blocks\template-wrap.txt" />
     <Content Include="Client\css\body.css" />
-    <Content Include="Client\scripts\api.js" />
-    <Content Include="Client\scripts\lib\bem-core.no-autoinit.js" />
-    <Content Include="Client\scripts\lib\handlebars.min.js" />
-    <Content Include="Client\scripts\lib\jquery.min.js" />
-    <Content Include="Client\scripts\init.js" />
+    <Content Include="Client\js\api.js" />
+    <Content Include="Client\js\lib\bem-core.no-autoinit.js" />
+    <Content Include="Client\js\lib\handlebars.min.js" />
+    <Content Include="Client\js\lib\jquery.min.js" />
+    <Content Include="Client\js\init.js" />
     <Content Include="Global.asax" />
     <Content Include="TODO.txt" />
     <Content Include="Web.config" />
