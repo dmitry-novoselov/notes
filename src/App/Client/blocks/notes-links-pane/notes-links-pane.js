@@ -20,10 +20,6 @@
                 var html = $(blocks.renderBlock("notes-links-pane", { notes: linksSummaries })).html();
 
                 BEMDOM.update(this.domElem, html);
-
-                $(".notes-link", this.domElem).each(function(_, link) {
-                    $(link).bem("notes-link");
-                });
             }
 		}
 	));
