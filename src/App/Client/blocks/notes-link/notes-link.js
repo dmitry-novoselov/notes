@@ -1,16 +1,15 @@
-﻿modules.define("notes-link", ["i-bem__dom"], function (provide, BEMDOM) {
+﻿modules.define("notes-link", ["i-bem__dom"], function(provide, BEMDOM) {
 
     /**
      * Events
      * - click(id)
      */
-	
+
     provide(BEMDOM.decl(this.name,
+        {},
         {
-        },
-        {
-            live: function () {
-                this.liveBindTo("click touchstart", function (e) {
+            live: function() {
+                this.liveBindTo("click touchstart", function(e) {
                     e.preventDefault();
                     this.emit("click", this.params.id);
                 });

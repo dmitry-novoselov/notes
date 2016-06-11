@@ -1,9 +1,9 @@
-(function ($, Handlebars) {
+(function($, Handlebars) {
 
     var templates = {};
 
     var render = {
-        block: function (blockName, model) {
+        block: function(blockName, model) {
             var template = templates[blockName];
 
             if (!template) {
@@ -30,12 +30,12 @@
     };
 
     // custom Handlebars block
-    Handlebars.registerHelper("bem-block", function (blockName, options) {
+    Handlebars.registerHelper("bem-block", function(blockName, options) {
         return render.block(blockName, options.hash);
     });
 
     // jQuery plugin
-    $.fn.renderBlock = function (blockName, model) {
+    $.fn.renderBlock = function(blockName, model) {
         var html = render.block(blockName, model);
         var jNode = $(html);
 
@@ -44,7 +44,7 @@
         return jNode.bem(blockName);
     };
 
-    modules.define("render", function (provide) {
+    modules.define("render", function(provide) {
         provide(render);
     });
 

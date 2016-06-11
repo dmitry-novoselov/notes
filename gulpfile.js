@@ -19,7 +19,7 @@ var browserSync = require('browser-sync').create();
 var pathIndexCshtml = "./src/App/Views/App/MobileIndex.cshtml";
 var pathClientBase = "./src/App/Client";
 
-var pathBlocksHtml =  pathClientBase + "/blocks/**/*.html";
+var pathBlocksHtml = pathClientBase + "/blocks/**/*.html";
 var pathsCss = [
     pathClientBase + "/css/body.css",
     pathClientBase + "/blocks/**/*.css"
@@ -34,13 +34,15 @@ var pathScripts = [
 
 // VS build
 
-gulp.task("default", function() {
+gulp.task("default", function () {
     run("concat-templates");
-    watch(pathBlocksHtml, function() { run("concat-templates"); });
-    
+    watch(pathBlocksHtml, function () {
+        run("concat-templates");
+    });
+
     buildCss(pathClientBase);
     watchCss(pathClientBase);
-    
+
     buildStaticJs(pathClientBase);
     buildJs(pathClientBase);
     watchJs(pathClientBase);
@@ -50,7 +52,7 @@ gulp.task("default", function() {
 
 var pathDest = "./Client.Build";
 
-gulp.task("build-index.html", ["concat-templates"], function() {
+gulp.task("build-index.html", ["concat-templates"], function () {
     return gulp.src(pathIndexCshtml)
         .pipe(replace("/client/", "/"))
         .pipe(replace('@{ Html.RenderPartial("Templates"); }', "<!--=include ./../src/App/Views/App/Templates.cshtml -->"))
@@ -59,9 +61,11 @@ gulp.task("build-index.html", ["concat-templates"], function() {
         .pipe(gulp.dest(pathDest));
 });
 
-gulp.task("client", ["build-index.html"], function() {
+gulp.task("client", ["build-index.html"], function () {
     gulp.watch(pathIndexCshtml, ["build-index.html"]);
-    watch(pathBlocksHtml, function() { run("build-index.html"); });
+    watch(pathBlocksHtml, function () {
+        run("build-index.html");
+    });
 
     buildCss(pathDest);
     watchCss(pathDest);
@@ -75,13 +79,13 @@ gulp.task("client", ["build-index.html"], function() {
             baseDir: pathDest
         }
     });
-    
+
     watch(pathDest + "/**/*", browserSync.reload);
 });
 
 // just serve Client.Build
 
-gulp.task("serve", function() {
+gulp.task("serve", function () {
     browserSync.init({
         server: {
             baseDir: pathDest
@@ -93,7 +97,7 @@ gulp.task("serve", function() {
 
 // shared utils
 
-gulp.task("concat-templates", function() {
+gulp.task("concat-templates", function () {
     return gulp.src(pathBlocksHtml)
         .pipe(wrap({src: pathClientBase + "/blocks/template-wrap.txt"}))
         .pipe(concat("Templates.cshtml"))
@@ -110,7 +114,7 @@ function buildCss(destBase) {
 }
 
 function watchCss(destBase) {
-    pathsCss.forEach(function(path) {
+    pathsCss.forEach(function (path) {
         watch(path, buildCss.bind(null, destBase));
     });
 }
@@ -135,7 +139,7 @@ function buildJs(destBase) {
 }
 
 function watchJs(destBase) {
-    pathScripts.forEach(function(path) {
+    pathScripts.forEach(function (path) {
         watch(path, buildJs.bind(null, destBase));
     });
 }
