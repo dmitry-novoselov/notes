@@ -17,10 +17,9 @@
 @{ Html.RenderPartial("Templates"); }
 
 <script>
-modules.require(["i-bem__dom_init"], function(init) {
+modules.require(["i-bem__dom_init", "start"], function(init, start) {
 	init();
-
-	$("#page-placeholder").renderBlock("page");
+    start();
 });
 </script>
 

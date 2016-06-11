@@ -122,7 +122,7 @@
     <Content Include="Client\js\lib\bem-core.no-autoinit.js" />
     <Content Include="Client\js\lib\handlebars.min.js" />
     <Content Include="Client\js\lib\jquery.min.js" />
-    <Content Include="Client\js\init.js" />
+    <Content Include="Client\js\render.js" />
     <Content Include="Global.asax" />
     <Content Include="TODO.txt" />
     <Content Include="Web.config" />

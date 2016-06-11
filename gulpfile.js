@@ -27,8 +27,8 @@ var pathsCss = [
 
 var pathLibScripts = pathClientBase + "/js/lib";
 var pathScripts = [
-    pathClientBase + "/js/api.js",
-    pathClientBase + "/js/init.js",
+    pathClientBase + "/js/render.js",
+    pathClientBase + "/js/modules/**/*.js",
     pathClientBase + "/blocks/**/*.js"
 ];
 

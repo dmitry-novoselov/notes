@@ -1,7 +1,5 @@
-﻿- introduce an app module, handle in it:
-    - loading notes
-    - navigating between notes
-- open editor for a note by link
+﻿- open editor for a note by link
+- rethink the blocks' names
 - store notes in db
 - creating a new note
 - SPA-navigation through notes
