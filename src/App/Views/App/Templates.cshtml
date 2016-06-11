@@ -1,20 +1,20 @@
 ﻿
+<script id="notes-link" type="text/x-handlebem-template">
+<a href="#" class="notes-link i-bem" data-bem='{"notes-link": {"id": {{id}} }}'>{{summary}}</a>
+</script>
+﻿
 <script id="notes-links-pane" type="text/x-handlebem-template">
-<div class="notes-links-pane">
+<div class="notes-links-pane i-bem" data-bem='{"notes-links-pane": {}}'>
 	{{#each notes}}
 	<div class="notes-links-pane__link">
-		{{#bem-block "notes-link" summary=text}}{{/bem-block}}
+		{{#bem-block "notes-link" id=id summary=text}}{{/bem-block}}
 	</div>
 	{{/each}}
 </div>
 </script>
 ﻿
-<script id="notes-link" type="text/x-handlebem-template">
-<a href="#" data-id="{{id}}" class="notes-link i-bem" data-bem='{"notes-link": {}}'>{{summary}}</a>
-</script>
-﻿
 <script id="page" type="text/x-handlebem-template">
-<div class="page">
+<div class="page i-bem" data-bem='{"page": {}}'>
 	{{#bem-block "notes-links-pane" mix="page__links"}}{{/bem-block}}
 </div>
 </script>

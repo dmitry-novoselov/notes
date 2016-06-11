@@ -1,4 +1,7 @@
-﻿- open editor for a note by link
+﻿- introduce an app module, handle in it:
+    - loading notes
+    - navigating between notes
+- open editor for a note by link
 - store notes in db
 - creating a new note
 - SPA-navigation through notes
@@ -9,6 +12,7 @@
 - store real notes
 - soft-deleting existing notes
 - implement db migrations on JavaScript
+- rename "notes" -> "note"
 ? eliminate gulp
 
 - https://github.com/bem/bem-core-dist

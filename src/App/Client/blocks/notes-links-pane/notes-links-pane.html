@@ -1,7 +1,7 @@
-<div class="notes-links-pane">
+<div class="notes-links-pane i-bem" data-bem='{"notes-links-pane": {}}'>
 	{{#each notes}}
 	<div class="notes-links-pane__link">
-		{{#bem-block "notes-link" summary=text}}{{/bem-block}}
+		{{#bem-block "notes-link" id=id summary=text}}{{/bem-block}}
 	</div>
 	{{/each}}
 </div>
