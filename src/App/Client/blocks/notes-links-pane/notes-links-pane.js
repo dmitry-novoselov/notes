@@ -1,27 +1,26 @@
-﻿modules.define("notes-links-pane", ["i-bem__dom", "blocks", "notes-link"], function (provide, BEMDOM, blocks, Link) {
+﻿modules.define("notes-links-pane", ["i-bem__dom", "render", "notes-link"], function (provide, BEMDOM, render, NotesLink) {
 
-	blocks.push(this.name);
+    provide(BEMDOM.decl(this.name,
+        {
+            onSetMod: {
+                "js": {
+                    "inited": function () {
+                        NotesLink.on(this.domElem, "click", this._onLinkClicked, this);
+                    }
+                }
+            },
 
-	provide(BEMDOM.decl(this.name,
-		{
-			onSetMod: {
-				"js": {
-					"inited": function() {
-                        Link.on(this.domElem, "click", this._onLinkClicked, this);
-					}
-				}
-			},
-
-            _onLinkClicked: function(e) {
+            _onLinkClicked: function (e) {
                 console.log("_onLinkClicked!");
             },
-			
-			render: function (linksSummaries) {
-                var html = $(blocks.renderBlock("notes-links-pane", { notes: linksSummaries })).html();
+
+            // todo: unify block re-rendering
+            render: function (linksSummaries) {
+                var html = render.blockContent("notes-links-pane", {notes: linksSummaries});
 
                 BEMDOM.update(this.domElem, html);
             }
-		}
-	));
+        }
+    ));
 
 });
