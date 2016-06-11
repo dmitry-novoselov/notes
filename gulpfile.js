@@ -27,8 +27,8 @@ var pathsCss = [
 
 var pathLibScripts = pathClientBase + "/js/lib";
 var pathScripts = [
-    pathClientBase + "/js/init.js",
     pathClientBase + "/js/api.js",
+    pathClientBase + "/js/init.js",
     pathClientBase + "/blocks/**/*.js"
 ];
 
@@ -46,7 +46,7 @@ gulp.task("default", function() {
     watchJs(pathClientBase);
 });
 
-// clientOnly build
+// client-only build
 
 var pathDest = "./Client.Build";
 
@@ -76,6 +76,18 @@ gulp.task("client", ["build-index.html"], function() {
         }
     });
     
+    watch(pathDest + "/**/*", browserSync.reload);
+});
+
+// just serve Client.Build
+
+gulp.task("serve", function() {
+    browserSync.init({
+        server: {
+            baseDir: pathDest
+        }
+    });
+
     watch(pathDest + "/**/*", browserSync.reload);
 });
 
@@ -117,7 +129,7 @@ function buildJs(destBase) {
     gulp.src(pathScripts)
         .pipe(sourcemaps.init())
         .pipe(concat("app.js"))
-        .pipe(uglify())
+        .pipe(uglify({mangle: false}))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(destBase + "/js"))
 }
