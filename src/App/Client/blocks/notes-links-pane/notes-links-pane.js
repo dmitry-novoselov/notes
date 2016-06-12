@@ -7,6 +7,8 @@
                 var html = render.blockContent("notes-links-pane", {notes: linksSummaries});
 
                 BEMDOM.update(this.domElem, html);
+
+                return this;
             }
         }
     ));

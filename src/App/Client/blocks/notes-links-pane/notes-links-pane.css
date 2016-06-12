@@ -1,3 +1,7 @@
+.notes-links-pane_hidden {
+    display: none;
+}
+
 .notes-links-pane__link {
     margin: 10px;
 }

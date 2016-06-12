@@ -1,17 +1,19 @@
 ﻿- open editor for a note by link
-- rethink the blocks' names
+- rethink the blocks'
+    - structure
+    - names
+    - responsibilities!
 - store notes in db
+- replace api when developing "client-only"
+- deploy
 - creating a new note
-- SPA-navigation through notes
+- navigation through browser history on opening notes
+- opening a note by direct link
 - reordering
 - offline work
-- load blocks' templates asynchronously as part of block initialization
-- live binding to notes links
-- store real notes
+? load blocks' templates asynchronously as part of block initialization
 - soft-deleting existing notes
 - implement db migrations on JavaScript
-- rename "notes" -> "note"
-- implement an source-map-include-sources analog in UglifyJS API
 ? eliminate gulp
 
 - https://github.com/bem/bem-core-dist

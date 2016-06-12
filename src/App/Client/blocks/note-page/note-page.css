@@ -1,0 +1,7 @@
+.note-page_hidden {
+    display: none;
+}
+
+.note-page__note {
+    padding: 10px;
+}
