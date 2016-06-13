@@ -1,4 +1,8 @@
 ﻿
+<script id="note-link" type="text/x-handlebem-template">
+<a href="#" class="note-link i-bem" data-bem='{"note-link": {"id": {{id}} }}'>{{summary}}</a>
+</script>
+﻿
 <script id="note-pane" type="text/x-handlebem-template">
 <div class="note-pane i-bem" data-bem='{"note-pane": {}}'>
     <a href="#" class="note-pane__to-notes-list">Back to notes list</a>
@@ -6,15 +10,11 @@
 </div>
 </script>
 ﻿
-<script id="notes-link" type="text/x-handlebem-template">
-<a href="#" class="notes-link i-bem" data-bem='{"notes-link": {"id": {{id}} }}'>{{summary}}</a>
-</script>
-﻿
 <script id="notes-links-pane" type="text/x-handlebem-template">
 <div class="notes-links-pane i-bem" data-bem='{"notes-links-pane": {}}'>
     {{#each notes}}
     <div class="notes-links-pane__link">
-        {{#bem-block "notes-link" id=id summary=text}}{{/bem-block}}
+        {{#bem-block "note-link" id=id summary=text}}{{/bem-block}}
     </div>
     {{/each}}
 </div>

@@ -114,9 +114,9 @@
     <Content Include="Client\blocks\notes-links-pane\notes-links-pane.css" />
     <Content Include="Client\blocks\notes-links-pane\notes-links-pane.js" />
     <Content Include="Client\blocks\notes-links-pane\notes-links-pane.html" />
-    <Content Include="Client\blocks\notes-link\notes-link.css" />
-    <Content Include="Client\blocks\notes-link\notes-link.html" />
-    <Content Include="Client\blocks\notes-link\notes-link.js" />
+    <Content Include="Client\blocks\note-link\note-link.css" />
+    <Content Include="Client\blocks\note-link\note-link.html" />
+    <Content Include="Client\blocks\note-link\note-link.js" />
     <Content Include="Client\blocks\page\page.css" />
     <Content Include="Client\blocks\page\page.html" />
     <Content Include="Client\blocks\template-wrap.txt" />
