@@ -2,3 +2,16 @@
     margin: 10px 0;
     padding: 0 10px;
 }
+
+.page_display_none .page__links,
+.page_display_none .page__note {
+    display: none;
+}
+
+.page_display_links .page__note {
+    display: none;
+}
+
+.page_display_note .page__links {
+    display: none;
+}

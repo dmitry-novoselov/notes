@@ -44,7 +44,7 @@ modules.define("start", ["jquery"], function(provide, $) {
                 vowGetNote: vowGetNote
             });
 
-        _bemPage.display();
+        _bemPage.displayLinks();
     }
 
     provide(start);

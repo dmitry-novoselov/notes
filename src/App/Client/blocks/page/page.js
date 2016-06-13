@@ -21,42 +21,30 @@
 
             _onOpenNote: function(e, noteId) {
                 this._config.vowGetNote(noteId)
-                    .then(this.displayNote.bind(this));
+                    .then(this._doneGetNote.bind(this));
             },
 
             _onOpenNotesList: function() {
-                this.display();
+                this.displayLinks();
             },
 
-            // todo: rename into displayLinks
-            display: function() {
+            _doneGetNote: function(note) {
+                this.findBlockOn(this.elem("note"), "note-pane")
+                    .render(note);
+
+                this.setMod("display", "note");
+            },
+
+            _doneGetNotesCaptions: function(notesCaptions) {
+                this.findBlockOn(this.elem("links"), "notes-links-pane")
+                    .render(notesCaptions);
+
+                this.setMod("display", "links");
+            },
+
+            displayLinks: function() {
                 this._config.vowGetNotesCaptions(MAX_LINK_CAPTION_LENGTH)
-                    .then(this.displayLinks.bind(this));
-            },
-
-            render: function() {
-                var html = render.block("page");
-
-                return BEMDOM.replace(this.domElem, html);
-            },
-
-            displayNote: function(note) {
-                this.findBlockOn(this.elem("links"), "notes-links-pane")
-                    .setMod("hidden");
-
-                this.findBlockOn(this.elem("note"), "note-pane")
-                    .render(note)
-                    .delMod("hidden");
-            },
-
-            // todo: rename into "done..."
-            displayLinks: function(linksSummaries) {
-                this.findBlockOn(this.elem("note"), "note-pane")
-                    .setMod("hidden");
-
-                this.findBlockOn(this.elem("links"), "notes-links-pane")
-                    .render(linksSummaries)
-                    .delMod("hidden");
+                    .then(this._doneGetNotesCaptions.bind(this));
             }
         }
     ));
