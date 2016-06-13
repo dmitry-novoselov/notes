@@ -1,8 +1,3 @@
-.page__note-link {
-    margin: 10px 0;
-    padding: 0 10px;
-}
-
 .page_display_none .page__links,
 .page_display_none .page__note {
     display: none;

@@ -15,7 +15,7 @@ modules.define("start", ["jquery"], function(provide, $) {
 
             return {
                 id: note.id,
-                text: matches[0] // todo: rename into "caption"
+                caption: matches[0]
             };
         });
 
