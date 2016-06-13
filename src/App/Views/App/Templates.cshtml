@@ -1,12 +1,14 @@
 ﻿
 <script id="note-link" type="text/x-handlebem-template">
-<a href="#" class="note-link i-bem" data-bem='{"note-link": {"id": {{id}} }}'>{{caption}}</a>
+<a href="#" class="note-link nav-link i-bem" data-bem='{"note-link": {"id": {{id}} }}'>{{caption}}</a>
 </script>
 ﻿
 <script id="note-pane" type="text/x-handlebem-template">
 <div class="note-pane i-bem" data-bem='{"note-pane": {}}'>
-    <a href="#" class="note-pane__to-notes-list">Back to notes list</a>
-    <div class="note-pane__note">{{text}}</div>
+    <a href="#" class="nav-link note-pane__to-notes-list">&lt;&lt; Notes</a>
+    <div class="note-pane__note">
+        <textarea class="note-pane__text-area">{{text}}</textarea>
+    </div>
 </div>
 </script>
 ﻿

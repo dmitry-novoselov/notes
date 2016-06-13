@@ -1,11 +1,8 @@
-﻿- open editor for a note by link
-- rethink the blocks'
-    - structure
-    - names
-    - responsibilities!
+﻿- get notes from db
 - store notes in db
-- replace api when developing "client-only"
 - deploy
+- make it look nice
+- fake api when developing "client-only"
 - creating a new note
 - navigation through browser history on opening notes
 - opening a note by direct link
