@@ -1,18 +1,35 @@
-﻿modules.define("page", ["i-bem__dom", "render"], function(provide, BEMDOM, render) {
+﻿modules.define("page", ["i-bem__dom", "render", "notes-link", "note-pane"], function(provide, BEMDOM, render, NoteLink, NotePane) {
 
+    const MAX_LINK_CAPTION_LENGTH = 30;
+    
     provide(BEMDOM.decl(this.name,
         {
-            // todo: magic number 30 (symbols)
-            
+            onSetMod: {
+                js: {
+                    inited: function() {
+                        NoteLink.on("click", this._onOpenNote, this);
+                        NotePane.on("to-notes-list-click", this._onOpenNotesList, this);
+                    }
+                }
+            },
+
             init: function(config) {
                 this._config = config;
                 
                 return this;
             },
+
+            _onOpenNote: function(e, noteId) {
+                this._config.vowGetNote(noteId)
+                    .then(this.displayNote.bind(this));            },
+
+            _onOpenNotesList: function() {
+
+            },
             
             // todo: rename into displayLinks
             display: function(){
-                this._config.vowGetNotesCaptions()
+                this._config.vowGetNotesCaptions(MAX_LINK_CAPTION_LENGTH)
                     .then(this.displayLinks.bind(this));
             },
             

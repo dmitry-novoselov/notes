@@ -1,4 +1,4 @@
-modules.define("start", ["jquery", "notes-link", "note-pane"], function(provide, $, NoteLink, NotePage) {
+modules.define("start", ["jquery", "note-pane"], function(provide, $, NotePane) {
 
     var _bemPage,
         _notes = [
@@ -72,8 +72,7 @@ modules.define("start", ["jquery", "notes-link", "note-pane"], function(provide,
 
         _bemPage.display();
 
-        NoteLink.on("click", onOpenNote);
-        NotePage.on("to-notes-list-click", onOpenNotesList);
+        NotePane.on("to-notes-list-click", onOpenNotesList);
     }
 
     provide(start);

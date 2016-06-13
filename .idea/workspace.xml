@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b96e6fb-331c-4389-8479-7c8fd2f769d7" name="Default" comment="buttons -&gt; links">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-page/note-page.css" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-page/note-page.html" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-page/note-page.js" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/App.csproj" afterPath="$PROJECT_DIR$/src/App/App.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/blocks/page/page.html" afterPath="$PROJECT_DIR$/src/App/Client/blocks/page/page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/blocks/page/page.js" afterPath="$PROJECT_DIR$/src/App/Client/blocks/page/page.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/js/modules/start.js" afterPath="$PROJECT_DIR$/src/App/Client/js/modules/start.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Views/App/Templates.cshtml" afterPath="$PROJECT_DIR$/src/App/Views/App/Templates.cshtml" />
     </list>
     <ignored path="notes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="start.js" pinned="true" current-in-tab="false">
+      <file leaf-file-name="start.js" pinned="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App/Client/js/modules/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="0" column="70" selection-start-line="0" selection-start-column="70" selection-end-line="0" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -56,8 +48,8 @@
       <file leaf-file-name="page.js" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/page/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+            <state relative-caret-position="391">
+              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -117,16 +109,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="note-pane.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="25" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/page/page.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -177,14 +159,14 @@
         <option value="$PROJECT_DIR$/src/App/Client/blocks/note-page/note-page.js" />
         <option value="$PROJECT_DIR$/src/App/TODO.txt" />
         <option value="$PROJECT_DIR$/src/App/Client/blocks/notes-links-pane/notes-links-pane.js" />
-        <option value="$PROJECT_DIR$/src/App/Client/js/modules/start.js" />
         <option value="$PROJECT_DIR$/src/App/App.csproj" />
         <option value="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.js" />
         <option value="$PROJECT_DIR$/src/App/Client/blocks/page/page.html" />
-        <option value="$PROJECT_DIR$/src/App/Client/blocks/page/page.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.html" />
         <option value="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.css" />
+        <option value="$PROJECT_DIR$/src/App/Client/blocks/page/page.js" />
+        <option value="$PROJECT_DIR$/src/App/Client/js/modules/start.js" />
       </list>
     </option>
   </component>
@@ -668,7 +650,7 @@
       <workItem from="1465628243526" duration="9549000" />
       <workItem from="1465648415241" duration="1465000" />
       <workItem from="1465667877979" duration="10753000" />
-      <workItem from="1465709472655" duration="15494000" />
+      <workItem from="1465709472655" duration="16046000" />
     </task>
     <task id="LOCAL-00001" summary="gave some air to links">
       <created>1465113238395</created>
@@ -688,7 +670,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62890000" />
+    <option name="totallyTimeSpent" value="63442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="48" width="1296" height="1040" extended-state="6" />
@@ -977,27 +959,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Client/js/modules/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/App.csproj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="111" column="54" selection-start-line="111" selection-start-column="54" selection-end-line="111" selection-end-column="54" />
           <caret line="110" column="54" selection-start-line="110" selection-start-column="54" selection-end-line="110" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/page/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1038,6 +1004,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1046,10 +1020,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.js">
+    <entry file="file://$PROJECT_DIR$/src/App/Client/blocks/page/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Client/js/modules/start.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="25" />
+          <caret line="0" column="70" selection-start-line="0" selection-start-column="70" selection-end-line="0" selection-end-column="70" />
           <folding />
         </state>
       </provider>
