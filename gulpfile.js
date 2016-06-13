@@ -3,7 +3,7 @@ var run = require('run-sequence');
 
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-var exec = require('child_process').exec;
+var exec = require('child_process').execSync;
 var globby = require('globby');
 
 var replace = require('gulp-replace');
@@ -123,13 +123,10 @@ function compileJs(destBase) {
             ' uglifyjs "' + filesPaths.join('" "') + '"' +
             ' --output "app.js" --source-map "app.js.map" --source-map-include-sources --prefix 4';
 
-        exec(cmd, function(err, stdout, stderr) {
-            console.log(stdout);
-            console.log(stderr);
-
-            fs.renameSync("app.js", destBase + "/js/app.js");
-            fs.renameSync("app.js.map", destBase + "/js/app.js.map");
-        });
+        exec(cmd);
+        
+        fs.renameSync("app.js", destBase + "/js/app.js");
+        fs.renameSync("app.js.map", destBase + "/js/app.js.map");
     });
 }
 

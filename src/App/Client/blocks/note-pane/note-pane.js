@@ -1,4 +1,4 @@
-modules.define("note-page", ["i-bem__dom", "render"], function(provide, BEMDOM, render) {
+modules.define("note-pane", ["i-bem__dom", "render"], function(provide, BEMDOM, render) {
 
     /**
      * Events
@@ -16,7 +16,7 @@ modules.define("note-page", ["i-bem__dom", "render"], function(provide, BEMDOM, 
 
             // todo: unify block re-rendering
             render: function(note) {
-                var html = render.blockContent("note-page", {text: note.text});
+                var html = render.blockContent("note-pane", {text: note.text});
 
                 BEMDOM.update(this.domElem, html);
                 

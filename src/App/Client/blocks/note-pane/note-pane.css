@@ -1,7 +1,7 @@
-.note-page_hidden {
+.note-pane_hidden {
     display: none;
 }
 
-.note-page__note {
+.note-pane__note {
     padding: 10px;
 }

@@ -1,4 +1,4 @@
-modules.define("start", ["jquery", "notes-link", "note-page"], function(provide, $, NoteLink, NotePage) {
+modules.define("start", ["jquery", "notes-link", "note-pane"], function(provide, $, NoteLink, NotePage) {
 
     var _bemPage,
         _notes = [

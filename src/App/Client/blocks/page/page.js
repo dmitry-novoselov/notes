@@ -26,14 +26,14 @@
                 this.findBlockOn(this.elem("links"), "notes-links-pane")
                     .setMod("hidden");
 
-                this.findBlockOn(this.elem("note"), "note-page")
+                this.findBlockOn(this.elem("note"), "note-pane")
                     .render(note)
                     .delMod("hidden");
             },
 
             // todo: rename into "done..."
             displayLinks: function(linksSummaries) {
-                this.findBlockOn(this.elem("note"), "note-page")
+                this.findBlockOn(this.elem("note"), "note-pane")
                     .setMod("hidden");
 
                 this.findBlockOn(this.elem("links"), "notes-links-pane")
