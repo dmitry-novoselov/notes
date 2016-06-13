@@ -1,12 +1,25 @@
-﻿modules.define("page", ["i-bem__dom"], function(provide, BEMDOM) {
+﻿modules.define("page", ["i-bem__dom", "render"], function(provide, BEMDOM, render) {
 
     provide(BEMDOM.decl(this.name,
         {
-            onSetMod: {
-                "js": {
-                    "inited": function() {
-                    }
-                }
+            // todo: magic number 30 (symbols)
+            
+            init: function(config) {
+                this._config = config;
+                
+                return this;
+            },
+            
+            // todo: rename into displayLinks
+            display: function(){
+                this._config.vowGetNotesCaptions()
+                    .then(this.displayLinks.bind(this));
+            },
+            
+            render: function() {
+                var html = render.block("page");
+
+                return BEMDOM.replace(this.domElem, html);
             },
 
             displayNote: function(note) {
@@ -18,6 +31,7 @@
                     .delMod("hidden");
             },
 
+            // todo: rename into "done..."
             displayLinks: function(linksSummaries) {
                 this.findBlockOn(this.elem("note"), "note-page")
                     .setMod("hidden");
