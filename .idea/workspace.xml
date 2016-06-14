@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b96e6fb-331c-4389-8479-7c8fd2f769d7" name="Default" comment="buttons -&gt; links">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/App/Client/blocks/nav-link/nav-link.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-link/note-link.css" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-link/note-link.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-link/note-link.html" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-link/note-link.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.css" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.html" afterPath="$PROJECT_DIR$/src/App/Client/blocks/note-pane/note-pane.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/TODO.txt" afterPath="$PROJECT_DIR$/src/App/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Views/App/Templates.cshtml" afterPath="$PROJECT_DIR$/src/App/Views/App/Templates.cshtml" />
-    </list>
+    <list default="true" id="3b96e6fb-331c-4389-8479-7c8fd2f769d7" name="Default" comment="buttons -&gt; links" />
     <ignored path="notes.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -466,7 +457,7 @@
       <workItem from="1465628243526" duration="9549000" />
       <workItem from="1465648415241" duration="1465000" />
       <workItem from="1465667877979" duration="10753000" />
-      <workItem from="1465709472655" duration="20803000" />
+      <workItem from="1465709472655" duration="21393000" />
     </task>
     <task id="LOCAL-00001" summary="gave some air to links">
       <created>1465113238395</created>
@@ -486,7 +477,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68199000" />
+    <option name="totallyTimeSpent" value="68789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
