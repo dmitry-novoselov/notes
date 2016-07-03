@@ -1,4 +1,4 @@
-﻿modules.define("api", function(provide) {
+﻿modules.define("api", ["jquery"], function(provide, $) {
 
     var api = {
         notes: {

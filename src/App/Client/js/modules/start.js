@@ -1,15 +1,20 @@
-modules.define("start", ["jquery"], function(provide, $) {
+modules.define("start", ["jquery", "api"], function(provide, $, api) {
 
     var _bemPage,
-        _notes = [
-            {id: 1, text: "text 1"},
-            {id: 2, text: "text 2\r\ndfgdsfg dsfg sg"},
-        ];
+        _notes;
 
-    function vowGetNotesCaptions(maxCaptionLength) {
-        var def = $.Deferred();
+    function asyncResolve(value) {
+        var deferred = $.Deferred();
 
-        var linksCaptions = _notes.map(function(note) {
+        setTimeout(function() {
+            deferred.resolve(value);
+        }, 0);
+
+        return deferred.promise();
+    }
+
+    function buildLinkCaptions(notes, maxCaptionLength) {
+        var linksCaptions = notes.map(function(note) {
             var maxLinkSummary = note.text.trim().substring(0, maxCaptionLength);
             var matches = /[^\r\n]*/.exec(maxLinkSummary);
 
@@ -19,21 +24,29 @@ modules.define("start", ["jquery"], function(provide, $) {
             };
         });
 
-        def.resolve(linksCaptions);
+        return linksCaptions;
+    }
 
-        return def.promise();
+    function vowGetNotesCaptions(maxCaptionLength) {
+        if (_notes) {
+            return asyncResolve(buildLinkCaptions(_notes, maxCaptionLength));
+        }
+
+        return api.notes.get()
+            .then(function(notes) {
+                _notes = notes;
+                return buildLinkCaptions(_notes, maxCaptionLength);
+            }, function() {
+                console.error("api.notes.get() failed");
+            });
     }
 
     function vowGetNote(noteId) {
-        var def = $.Deferred();
-
         var note = _notes.find(function(x) {
             return x.id === noteId;
         });
 
-        def.resolve(note);
-
-        return def.promise();
+        return asyncResolve(note);
     }
 
     function start() {

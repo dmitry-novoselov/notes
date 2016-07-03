@@ -77,6 +77,9 @@ gulp.task("client", ["make-dest-path"], function() {
     buildCss(pathDest);
     watchCss(pathDest);
 
+    // hack
+    pathScripts.push(pathClientBase + "/js/fakes/**/*.js");
+
     compileLibJs(pathDest);
     compileJs(pathDest);
     pathScripts.forEach(function(path) {
