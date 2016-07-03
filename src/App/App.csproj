@@ -121,6 +121,7 @@
     <Content Include="Client\blocks\page\page.html" />
     <Content Include="Client\blocks\template-wrap.txt" />
     <Content Include="Client\css\body.css" />
+    <Content Include="Client\js\fakes\api.js" />
     <Content Include="Client\js\lib\bem-core.no-autoinit.js" />
     <Content Include="Client\js\lib\handlebars.min.js" />
     <Content Include="Client\js\lib\jquery.min.js" />
@@ -135,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="App_Code\FromJson.cs" />
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,6 +167,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

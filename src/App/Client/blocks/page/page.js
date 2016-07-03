@@ -9,6 +9,7 @@
                     inited: function() {
                         NoteLink.on("click", this._onOpenNote, this);
                         NotePane.on("to-notes-list-click", this._onOpenNotesList, this);
+                        NotePane.on("note-changed", this._onNoteChanged, this);
                     }
                 }
             },
@@ -28,11 +29,17 @@
                 this.displayLinks();
             },
 
-            _doneGetNote: function(note) {
-                this.findBlockOn(this.elem("note"), "note-pane")
-                    .render(note);
+            _onNoteChanged: function(e, noteText) {
+                this._config.vowSaveNote(this._currentNote.id, noteText)
+                    .then(this._doneSaveNote.bind(this));
+            },
 
-                this.setMod("display", "note");
+            _doneSaveNote: function(/**/) {
+                console.warn("todo: update the note id if necessary");
+            },
+
+            _doneGetNote: function(note) {
+                this._displayNote(note);
             },
 
             _doneGetNotesCaptions: function(notesCaptions) {
@@ -40,6 +47,15 @@
                     .render(notesCaptions);
 
                 this.setMod("display", "links");
+            },
+
+            _displayNote: function(note) {
+                this._currentNote = note;
+
+                this.findBlockOn(this.elem("note"), "note-pane")
+                    .render(note);
+
+                this.setMod("display", "note");
             },
 
             displayLinks: function() {

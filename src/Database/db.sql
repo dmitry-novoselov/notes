@@ -10,4 +10,4 @@ begin
 		[text] nvarchar(max) not null
 	);
 
-end
+end;

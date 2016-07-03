@@ -1,8 +1,6 @@
-﻿- get notes from db
-- store notes in db
-- deploy
+﻿- deploy
 - make it look nice
-- fake api when developing "client-only"
+- employ rx
 - creating a new note
 - navigation through browser history on opening notes
 - opening a note by direct link

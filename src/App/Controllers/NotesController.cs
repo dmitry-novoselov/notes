@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 using Core;
 using Core.Models;
 
@@ -12,25 +15,22 @@ namespace App.Controllers
 			return Db.ReadNotes();
 		}
 
-		// GET: api/Default/5
-		public string Get(int id)
+		public Note Get(int id)
 		{
-			return "value";
+			return Db.ReadNote(id);
 		}
 
-		// POST: api/Default
-		public void Post([FromBody] string value)
+		public void Post([ModelBinder(typeof(FromJson<Note>))] Note note)
 		{
+			Debug.Assert(note != null);
+			Debug.Assert(note.text != null, "No data was sent or it failed to deserialize");
+
+			Db.UpdateNote(note);
 		}
 
-		// PUT: api/Default/5
-		public void Put(int id, [FromBody] string value)
-		{
-		}
-
-		// DELETE: api/Default/5
 		public void Delete(int id)
 		{
+			throw new NotImplementedException();
 		}
 	}
 }

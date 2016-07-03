@@ -4,6 +4,10 @@
         notes: {
             get: function() {
                 return $.get('/api/notes');
+            },
+
+            save: function(note) {
+                return $.post('/api/notes', JSON.stringify(note));
             }
         }
     };

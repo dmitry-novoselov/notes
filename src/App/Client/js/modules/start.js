@@ -49,12 +49,31 @@ modules.define("start", ["jquery", "api"], function(provide, $, api) {
         return asyncResolve(note);
     }
 
+    function vowSaveNote(noteId, noteText) {
+        var note = {
+            id: noteId,
+            text: noteText
+        };
+
+        return api.notes.save(note)
+            .then(doneSaveNote.bind(null, note));
+    }
+    
+    function doneSaveNote(note) {
+        var noteToUpdate = _notes.find(function(x) {
+            return x.id === note.id;
+        })
+
+        $.extend(true, noteToUpdate, note);
+    }
+
     function start() {
         _bemPage = $("#page-placeholder")
             .renderBlock("page")
             .init({
                 vowGetNotesCaptions: vowGetNotesCaptions,
-                vowGetNote: vowGetNote
+                vowGetNote: vowGetNote,
+                vowSaveNote: vowSaveNote
             });
 
         _bemPage.displayLinks();
