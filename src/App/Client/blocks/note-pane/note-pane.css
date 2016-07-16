@@ -1,5 +1,5 @@
 .note-pane__note {
-    padding: 10px;
+    margin: 10px;
 }
 
 .note-pane__to-notes-list {
@@ -10,4 +10,8 @@
 .note-pane__text-area {
     width: 100%;
     height: 300px;
+
+	box-sizing: border-box;
+
+	resize: none;
 }

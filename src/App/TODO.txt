@@ -1,7 +1,8 @@
-﻿- deploy
-    msdeploy -verb:sync -source:contentPath="C:\Source\Notes\Client.Build" -dest:contentPath='vho_novosel_49969\vho_novosel_499690\WWWRoot',ComputerName="https://vho_novosel_49969.vh.parking.ru:8172/msdeploy.axd?site=vho_novosel_49969.vh.parking.ru",UserName='client\vho_novosel_49969',Password='Yn2TomnKgZ',AuthType='Basic' -allowUntrusted -whatif
+﻿- switch between editing and links-friendly viewing
 - secure it with password
-- make it look nice
+
+- in app.js.map reference the original files
+	- remove sources from the map file
 - employ jshint
 - employ fxcop
 - employ rx
@@ -14,7 +15,10 @@
 - soft-deleting existing notes
 - implement db migrations on JavaScript
 ? eliminate gulp
+- deploy from command line
+    msdeploy -verb:sync -source:contentPath="C:\Source\Notes\Client.Build" -dest:contentPath='vho_novosel_49969\vho_novosel_499690\WWWRoot',ComputerName="https://vho_novosel_49969.vh.parking.ru:8172/msdeploy.axd?site=vho_novosel_49969.vh.parking.ru",UserName='client\vho_novosel_49969',Password='Yn2TomnKgZ',AuthType='Basic' -allowUntrusted -whatif
 
 - make it multi-user
+- make it look nice
 
 - https://github.com/bem/bem-core-dist
