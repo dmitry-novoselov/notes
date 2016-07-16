@@ -17,6 +17,10 @@
                     {id: 1, text: "text 1"},
                     {id: 2, text: "text 2\r\ndfgdsfg dsfg sg"},
                 ]);
+            },
+
+            save: function(note) {
+                return asyncResolve(note);
             }
         }
     };

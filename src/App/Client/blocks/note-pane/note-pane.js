@@ -20,6 +20,7 @@ modules.define("note-pane", ["i-bem__dom", "render"], function(provide, BEMDOM, 
                 var html = render.blockContent("note-pane", {text: note.text});
 
                 BEMDOM.update(this.domElem, html);
+                this.dropElemCache("text-area");
 
                 return this;
             }
@@ -31,9 +32,7 @@ modules.define("note-pane", ["i-bem__dom", "render"], function(provide, BEMDOM, 
                     this.emit("to-notes-list-click");
                 });
 
-                this.liveBindTo("text-area", "input paste", function(e) {
-                    e.preventDefault();
-
+                this.liveBindTo("text-area", "input cut paste", function(e) {
                     clearTimeout(this._editTimeoutId);
 
                     var noteText = this.elem("text-area").val();

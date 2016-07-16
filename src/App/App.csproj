@@ -120,14 +120,21 @@
     <Content Include="Client\blocks\page\page.css" />
     <Content Include="Client\blocks\page\page.html" />
     <Content Include="Client\blocks\template-wrap.txt" />
+    <Content Include="Client\css\app.css" />
     <Content Include="Client\css\body.css" />
+    <Content Include="Client\icons\favicon-16x16.png" />
+    <Content Include="Client\icons\favicon-32x32.png" />
+    <Content Include="Client\js\app.js" />
     <Content Include="Client\js\fakes\api.js" />
+    <Content Include="Client\js\lib.js" />
     <Content Include="Client\js\lib\bem-core.no-autoinit.js" />
     <Content Include="Client\js\lib\handlebars.min.js" />
     <Content Include="Client\js\lib\jquery.min.js" />
+    <Content Include="Client\js\modules\polyfills.js" />
     <Content Include="Client\js\modules\api.js" />
     <Content Include="Client\js\modules\start.js" />
     <Content Include="Client\js\render.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="TODO.txt" />
     <Content Include="Web.config" />
@@ -148,6 +155,9 @@
     <Content Include="packages.config" />
     <Content Include="Views\App\MobileIndex.cshtml" />
     <Content Include="Views\App\Templates.cshtml" />
+    <Content Include="Client\js\app.js.map" />
+    <Content Include="Client\css\app.css.map" />
+    <None Include="Properties\PublishProfiles\Parking.ru.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,5 +1,9 @@
 ﻿- deploy
+    msdeploy -verb:sync -source:contentPath="C:\Source\Notes\Client.Build" -dest:contentPath='vho_novosel_49969\vho_novosel_499690\WWWRoot',ComputerName="https://vho_novosel_49969.vh.parking.ru:8172/msdeploy.axd?site=vho_novosel_49969.vh.parking.ru",UserName='client\vho_novosel_49969',Password='Yn2TomnKgZ',AuthType='Basic' -allowUntrusted -whatif
+- secure it with password
 - make it look nice
+- employ jshint
+- employ fxcop
 - employ rx
 - creating a new note
 - navigation through browser history on opening notes
@@ -10,5 +14,7 @@
 - soft-deleting existing notes
 - implement db migrations on JavaScript
 ? eliminate gulp
+
+- make it multi-user
 
 - https://github.com/bem/bem-core-dist

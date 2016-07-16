@@ -1,6 +1,6 @@
 ﻿modules.define("page", ["i-bem__dom", "render", "note-link", "note-pane"], function(provide, BEMDOM, render, NoteLink, NotePane) {
 
-    const MAX_LINK_CAPTION_LENGTH = 30;
+    var MAX_LINK_CAPTION_LENGTH = 30;
 
     provide(BEMDOM.decl(this.name,
         {
