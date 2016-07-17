@@ -108,6 +108,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\blocks\auth-page\auth-page.css" />
+    <Content Include="Client\blocks\auth-page\auth-page.html" />
+    <Content Include="Client\blocks\auth-page\auth-page.js" />
     <Content Include="Client\blocks\note-pane\note-pane.css" />
     <Content Include="Client\blocks\note-pane\note-pane.html" />
     <Content Include="Client\blocks\note-pane\note-pane.js" />
@@ -132,6 +135,7 @@
     <Content Include="Client\js\lib\jquery.min.js" />
     <Content Include="Client\js\modules\polyfills.js" />
     <Content Include="Client\js\modules\api.js" />
+    <Content Include="Client\js\modules\auth.js" />
     <Content Include="Client\js\modules\start.js" />
     <Content Include="Client\js\render.js" />
     <Content Include="favicon.ico" />
@@ -144,6 +148,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="App_Code\FromJson.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +163,7 @@
     <Content Include="Client\js\app.js.map" />
     <Content Include="Client\css\app.css.map" />
     <None Include="Properties\PublishProfiles\Parking.ru.pubxml" />
+    <Content Include="Views\App\MobileAuthentication.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

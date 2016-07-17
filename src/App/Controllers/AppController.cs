@@ -6,7 +6,14 @@ namespace App.Controllers
 	{
 		public ActionResult Index()
 		{
-			return View("MobileIndex");
+			if (User.Identity.IsAuthenticated)
+			{
+				return View("MobileIndex");
+			}
+			else
+			{
+				return View("MobileAuthentication");
+			}
 		}
 	}
 }

@@ -1,4 +1,14 @@
 ﻿
+<script id="auth-page" type="text/x-handlebem-template">
+<div class="auth-page">
+	<input class="auth-page__email" type="email" placeholder="Email" name="email">
+	<div class="auth-page__notes">
+		<span class="auth-page__login-instructions auth-page__login-instructions_hidden">Email with a logging link has been sent to your email</span>
+		<span class="auth-page__login-failed-note auth-page__login-failed-note_hidden">Failed to send email to the address you've entered</span>
+	</div>
+</div>
+</script>
+﻿
 <script id="note-link" type="text/x-handlebem-template">
 <a href="#" class="note-link nav-link i-bem" data-bem='{"note-link": {"id": {{id}} }}'>{{caption}}</a>
 </script>
@@ -26,5 +36,9 @@
 <div class="page i-bem" data-bem='{"page": {}}'>
     {{#bem-block "notes-links-pane" mix="page__links"}}{{/bem-block}}
     {{#bem-block "note-pane" mix="page__note"}}{{/bem-block}}
+
+    <div class="page__bottom">
+        <a class="page__sign-out" href="#">sign out</a>
+    </div>
 </div>
 </script>

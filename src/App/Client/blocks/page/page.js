@@ -1,5 +1,10 @@
 ﻿modules.define("page", ["i-bem__dom", "render", "note-link", "note-pane"], function(provide, BEMDOM, render, NoteLink, NotePane) {
 
+    /**
+     * Events
+     * - sign-out()
+     */
+
     var MAX_LINK_CAPTION_LENGTH = 30;
 
     provide(BEMDOM.decl(this.name,
@@ -61,6 +66,14 @@
             displayLinks: function() {
                 this._config.vowGetNotesCaptions(MAX_LINK_CAPTION_LENGTH)
                     .then(this._doneGetNotesCaptions.bind(this));
+            }
+        },
+        {
+            live: function() {
+                this.liveBindTo("sign-out", "click touchstart", function(e) {
+                    e.preventDefault();
+                    this.emit("sign-out");
+                });
             }
         }
     ));

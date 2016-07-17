@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Notes</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="icon" type="image/png" href="/client/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/client/icons/favicon-16x16.png" sizes="16x16">
+
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" type="text/css" href="./client/css/app.css">
+
+	<script src="./client/js/lib.js"></script>
+	<script src="./client/js/app.js"></script>
+</head>
+<body>
+
+<div id="page-placeholder"></div>
+
+@{ Html.RenderPartial("Templates"); }
+
+<script>
+modules.require(["i-bem__dom_init", "auth"], function(init, auth) {
+	init();
+	auth();
+});
+</script>
+
+</body>
+</html>

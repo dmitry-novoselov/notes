@@ -1,6 +1,8 @@
 modules.define("start", ["jquery", "api"], function(provide, $, api) {
 
-    var _bemPage,
+    var STATUS_CODE_NOT_AUTHORIZED = 401;
+
+    var _bockPage,
         _notes;
 
     function asyncResolve(value) {
@@ -56,7 +58,7 @@ modules.define("start", ["jquery", "api"], function(provide, $, api) {
         };
 
         return api.notes.save(note)
-            .then(doneSaveNote.bind(null, note));
+            .then(doneSaveNote.bind(null, note), failSaveNote);
     }
     
     function doneSaveNote(note) {
@@ -67,16 +69,32 @@ modules.define("start", ["jquery", "api"], function(provide, $, api) {
         $.extend(true, noteToUpdate, note);
     }
 
+    function failSaveNote(xdr) {
+        if (xdr.status === STATUS_CODE_NOT_AUTHORIZED) {
+            window.location.reload();
+        }
+    }
+
+    function signOut() {
+        api.auth.signOut()
+            .then(function() {
+                window.location.reload();
+            }, function() {
+                console.error("Failed to sign out");
+            });
+    }
+
     function start() {
-        _bemPage = $("#page-placeholder")
+        _bockPage = $("#page-placeholder")
             .renderBlock("page")
             .init({
                 vowGetNotesCaptions: vowGetNotesCaptions,
                 vowGetNote: vowGetNote,
                 vowSaveNote: vowSaveNote
-            });
+            })
+            .on("sign-out", signOut);
 
-        _bemPage.displayLinks();
+        _bockPage.displayLinks();
     }
 
     provide(start);

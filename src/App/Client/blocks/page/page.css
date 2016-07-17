@@ -10,3 +10,9 @@
 .page_display_note .page__links {
     display: none;
 }
+
+.page__bottom {
+    margin-top: 10px;
+
+    text-align: center;
+}

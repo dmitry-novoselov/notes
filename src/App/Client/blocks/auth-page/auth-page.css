@@ -1,0 +1,23 @@
+.auth-page {
+    margin-top: 100px;
+
+    text-align: center;
+}
+
+.auth-page__email {
+    width: 200px;
+}
+
+.auth-page__notes {
+    margin-top: 20px;
+    padding: 0 30px;
+}
+
+.auth-page__login-failed-note {
+    color: #BB0000;
+}
+
+.auth-page__login-instructions_hidden,
+.auth-page__login-failed-note_hidden {
+    display: none;
+}
