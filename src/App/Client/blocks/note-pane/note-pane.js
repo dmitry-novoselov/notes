@@ -32,7 +32,7 @@ modules.define("note-pane", ["i-bem__dom", "render"], function(provide, BEMDOM, 
                     this.emit("to-notes-list-click");
                 });
 
-                this.liveBindTo("text-area", "input cut paste", function(e) {
+                this.liveBindTo("text-area", "change", function(e) {
                     clearTimeout(this._editTimeoutId);
 
                     var noteText = this.elem("text-area").val();
