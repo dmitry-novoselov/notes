@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Http;
@@ -30,11 +31,23 @@ namespace App
 			if (authenticationCoockie == null)
 				return;
 
-			var ticket = FormsAuthentication.Decrypt(authenticationCoockie.Value);
-			if (ticket == null)
-				return;
+			try
+			{
+				var ticket = FormsAuthentication.Decrypt(authenticationCoockie.Value);
+				if (ticket == null)
+					return;
 
-			HttpContext.Current.User = new GenericPrincipal(new FormsIdentity(ticket), new string[0]);
+				if (ticket.Expired)
+					return;
+
+				HttpContext.Current.User = new GenericPrincipal(new FormsIdentity(ticket), new string[0]);
+			}
+			catch (CryptographicException)
+			{
+			}
+			catch (ArgumentException)
+			{
+			}
 		}
 	}
 }
