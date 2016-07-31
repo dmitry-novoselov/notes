@@ -29,7 +29,7 @@ namespace Core
 		{
 			using (var cnn = NewConnection())
 			{
-				cnn.Execute(@"insert note([text]) values (@text)", new { note.text });
+				cnn.Execute(@"insert note(text) values (@text)", new { note.text });
 			}
 		}
 
@@ -37,7 +37,15 @@ namespace Core
 		{
 			using (var cnn = NewConnection())
 			{
-				cnn.Execute(@"update note set [text] = @text where id = @id", new { note.id, note.text });
+				cnn.Execute(@"update note set text = @text where id = @id", new { note.id, note.text });
+			}
+		}
+
+		public static void Log(string text)
+		{
+			using (var cnn = NewConnection())
+			{
+				cnn.Execute(@"insert logs (text) values (@text)", new {text});
 			}
 		}
 
