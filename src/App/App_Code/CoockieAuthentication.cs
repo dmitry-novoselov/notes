@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
@@ -10,23 +11,30 @@ namespace App
 	/// </summary>
 	public static class CoockieAuthentication
 	{
-		public static void TrySignIn(HttpRequestBase request)
+		public static void TrySignIn(HttpRequestBase request, HttpResponseBase response)
 		{
-			if (request.IsAuthenticated)
-				return;
+			try
+			{
+				if (request.IsAuthenticated)
+					return;
 
-			var authenticationCoockie = request.Cookies["auth"];
-			if (authenticationCoockie == null)
-				return;
+				var authenticationCoockie = request.Cookies["auth"];
+				if (authenticationCoockie == null)
+					return;
 
-			var ticket = FormsAuthentication.Decrypt(authenticationCoockie.Value);
-			if (ticket == null)
-				return;
+				var ticket = FormsAuthentication.Decrypt(authenticationCoockie.Value);
+				if (ticket == null)
+					return;
 
-			if (ticket.Expired)
-				return;
+				if (ticket.Expired)
+					return;
 
-			SetUser(ticket);
+				SetUser(ticket);
+			}
+			catch (CryptographicException)
+			{
+				SignOut(response);
+			}
 		}
 
 		public static void SetAuthCoockie(string userId, HttpResponseBase response)
