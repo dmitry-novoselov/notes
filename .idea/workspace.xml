@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b96e6fb-331c-4389-8479-7c8fd2f769d7" name="Default" comment="buttons -&gt; links">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Web.config" afterPath="$PROJECT_DIR$/src/App/Web.config" />
-    </list>
+    <list default="true" id="3b96e6fb-331c-4389-8479-7c8fd2f769d7" name="Default" comment="buttons -&gt; links" />
     <ignored path="notes.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/App/Web.config">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -232,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,6 +282,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -410,6 +407,7 @@
       <workItem from="1468735201378" duration="6104000" />
       <workItem from="1468769113118" duration="145000" />
       <workItem from="1468854457000" duration="599000" />
+      <workItem from="1470119233418" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="gave some air to links">
       <created>1465113238395</created>
@@ -429,7 +427,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95561000" />
+    <option name="totallyTimeSpent" value="96160000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -783,7 +781,7 @@
     <entry file="file://$PROJECT_DIR$/src/App/Web.config">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding />
         </state>
       </provider>

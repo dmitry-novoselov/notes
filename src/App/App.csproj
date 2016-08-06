@@ -149,6 +149,7 @@
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="App_Code\FromJson.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="App_Code\CoockieAuthentication.cs" />
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +165,7 @@
     <Content Include="Client\css\app.css.map" />
     <None Include="Properties\PublishProfiles\Parking.ru.pubxml" />
     <Content Include="Views\App\MobileAuthentication.cshtml" />
+    <Content Include="Views\App\Coockies.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

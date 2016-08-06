@@ -1,8 +1,5 @@
-﻿using System;
-using System.Net;
-using System.Web;
+﻿using System.Net;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace App.Controllers
 {
@@ -10,16 +7,9 @@ namespace App.Controllers
 	{
 		public ActionResult Login(string email)
 		{
-			if (email == "dmitry.a.novoselov@yandex.ru" || email == "pw6")
+			if (email == "dmitry.a.novoselov@yandex.ru")
 			{
-				var ticket = new FormsAuthenticationTicket(email, true, (int) FormsAuthentication.Timeout.TotalMinutes);
-				var encriptedTicket = FormsAuthentication.Encrypt(ticket);
-				var httpCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encriptedTicket)
-				{
-					Expires = DateTime.UtcNow.Add(FormsAuthentication.Timeout)
-				};
-
-				Response.SetCookie(httpCookie);
+				CoockieAuthentication.SetAuthCoockie(email, Response);
 
 				return new HttpStatusCodeResult(HttpStatusCode.OK, "Logged in successfully");
 			}
@@ -29,7 +19,7 @@ namespace App.Controllers
 
 		public void SignOut()
 		{
-			FormsAuthentication.SignOut();
-		}
+			CoockieAuthentication.SignOut(Response);
+        }
 	}
 }

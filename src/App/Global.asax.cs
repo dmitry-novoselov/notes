@@ -19,42 +19,8 @@ namespace App
 
 		protected void Application_AuthenticateRequest(Object sender, EventArgs e)
 		{
-			Db.Log("Authenticated: " + HttpContext.Current.Request.IsAuthenticated);
-//			if (HttpContext.Current.Request.IsAuthenticated)
-//				return;
-
-			Db.Log("FormsAuthentication.FormsCookieName: " + FormsAuthentication.FormsCookieName);
-			Db.Log("Request.Cookies.Count: " + Request.Cookies.Count);
-			Db.Log("Request.Cookies.AllKeys: " + string.Join(",", Request.Cookies.AllKeys));
-
-			var authenticationCoockie = Request.Cookies[FormsAuthentication.FormsCookieName];
-			Db.Log("authenticationCoockie == null: " + (authenticationCoockie == null));
-			if (authenticationCoockie == null)
-				return;
-
-			try
-			{
-				var ticket = FormsAuthentication.Decrypt(authenticationCoockie.Value);
-				Db.Log("ticket: " + ticket);
-				if (ticket == null)
-					return;
-
-				Db.Log("ticket.Expired: " + ticket.Expired);
-				Db.Log("ticket.Expired: " + ticket.Expired);
-				if (ticket.Expired)
-					return;
-
-				var principal = new GenericPrincipal(new FormsIdentity(ticket), new string[0]);
-				Db.Log("principal.Identity.IsAuthenticated: " + principal.Identity.IsAuthenticated);
-				HttpContext.Current.User = principal;
-			}
-			catch (CryptographicException)
-			{
-			}
-			catch (ArgumentException)
-			{
-			}
-
+			CoockieAuthentication.TrySignIn(
+				new HttpRequestWrapper(HttpContext.Current.Request));
 		}
 	}
 }
