@@ -1,10 +1,16 @@
-.note-pane__note {
+.note-pane {
     margin: 10px;
 }
 
 .note-pane__to-notes-list {
     display: block;
-    margin: 10px;
+}
+
+.note-pane__switcher {
+	margin: 10px 0;
+}
+
+.note-pane__note {
 }
 
 .note-pane__text-area {

@@ -1,5 +1,6 @@
 <div class="note-pane i-bem" data-bem='{"note-pane": {}}'>
-    <a href="#" class="nav-link note-pane__to-notes-list">&lt;&lt; Notes</a>
+	<a href="#" class="nav-link note-pane__to-notes-list">&lt;&lt; Notes</a>
+	<div class="note-pane__switcher">{{#bem-block "switcher" leftText="links" rightText="editor"}}{{/bem-block}}</div>
     <div class="note-pane__note">
         <textarea class="note-pane__text-area">{{text}}</textarea>
     </div>

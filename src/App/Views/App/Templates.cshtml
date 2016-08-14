@@ -15,7 +15,8 @@
 ﻿
 <script id="note-pane" type="text/x-handlebem-template">
 <div class="note-pane i-bem" data-bem='{"note-pane": {}}'>
-    <a href="#" class="nav-link note-pane__to-notes-list">&lt;&lt; Notes</a>
+	<a href="#" class="nav-link note-pane__to-notes-list">&lt;&lt; Notes</a>
+	<div class="note-pane__switcher">{{#bem-block "switcher" leftText="links" rightText="editor"}}{{/bem-block}}</div>
     <div class="note-pane__note">
         <textarea class="note-pane__text-area">{{text}}</textarea>
     </div>
@@ -40,5 +41,11 @@
     <div class="page__bottom">
         <a class="page__sign-out" href="#">sign out</a>
     </div>
+</div>
+</script>
+﻿
+<script id="switcher" type="text/x-handlebem-template">
+<div class="switcher">
+	<a class="switcher__left-option" href="#">{{leftText}}</a><span class="switcher__delimiter">•</span><a class="switcher__right-option" href="#">{{rightText}}</a>
 </div>
 </script>

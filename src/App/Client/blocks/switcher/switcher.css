@@ -1,0 +1,11 @@
+.switcher {
+}
+
+.switcher__left-option,
+.switcher__right-option {
+	text-decoration: none;
+}
+
+.switcher__delimiter {
+	margin: 0 5px;
+}

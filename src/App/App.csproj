@@ -122,6 +122,9 @@
     <Content Include="Client\blocks\note-link\note-link.js" />
     <Content Include="Client\blocks\page\page.css" />
     <Content Include="Client\blocks\page\page.html" />
+    <Content Include="Client\blocks\switcher\switcher.css" />
+    <Content Include="Client\blocks\switcher\switcher.html" />
+    <Content Include="Client\blocks\switcher\switcher.js" />
     <Content Include="Client\blocks\template-wrap.txt" />
     <Content Include="Client\css\app.css" />
     <Content Include="Client\css\body.css" />
