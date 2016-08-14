@@ -9,3 +9,9 @@
 .switcher__delimiter {
 	margin: 0 5px;
 }
+
+.switcher_mode_left .switcher__left-option,
+.switcher_mode_right .switcher__right-option {
+	cursor: default;
+	color: #000;
+}

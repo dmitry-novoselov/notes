@@ -19,6 +19,7 @@
 	<div class="note-pane__switcher">{{#bem-block "switcher" leftText="links" rightText="editor"}}{{/bem-block}}</div>
     <div class="note-pane__note">
         <textarea class="note-pane__text-area">{{text}}</textarea>
+		<div class="note-pane__links-area">{{{html}}}</div>
     </div>
 </div>
 </script>
@@ -45,7 +46,7 @@
 </script>
 ﻿
 <script id="switcher" type="text/x-handlebem-template">
-<div class="switcher">
+<div class="switcher switcher_mode_left" data-bem='{"switcher": {}}'>
 	<a class="switcher__left-option" href="#">{{leftText}}</a><span class="switcher__delimiter">•</span><a class="switcher__right-option" href="#">{{rightText}}</a>
 </div>
 </script>

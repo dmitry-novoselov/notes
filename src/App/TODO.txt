@@ -1,6 +1,4 @@
-﻿- switch between editing and links-friendly viewing
-
-- use attribute routing
+﻿- use attribute routing
 - in app.js.map reference the original files
 	- remove sources from the map file
 - employ jshint

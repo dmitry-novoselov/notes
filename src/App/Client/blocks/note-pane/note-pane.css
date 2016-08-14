@@ -21,3 +21,8 @@
 
 	resize: none;
 }
+
+.note-pane_mode_links .note-pane__text-area,
+.note-pane_mode_editor .note-pane__links-area {
+	display: none;
+}
